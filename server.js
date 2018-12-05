@@ -6,7 +6,7 @@ const app = express();
 app.get('/', function(req, res){
     res.sendFile('/index.html/');
 
-    app.listen(process.env.PORT || 4000, function(){
+    app.listen(4000, function(){
         console.log('Your node js server is running');
     });
 
