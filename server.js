@@ -9,7 +9,7 @@ try {
     const path = require('path');
     const seatRoute = require('./app/routes/seatRoute.js');
     const app = express();
-    const port = config.APP_PORT || 5000;
+    const port = process.env.PORT || config.APP_PORT || 5000;
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(express.static(path.join(__dirname, '/public'))); // Return static files from the public directory
