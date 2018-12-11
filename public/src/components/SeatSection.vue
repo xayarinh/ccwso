@@ -12,6 +12,7 @@
 <script>
     import axios from 'axios'
     import config from '../../../app/config.js'
+
     export default {
         name: "SeatSection",
         props: ['section_data'],
@@ -26,6 +27,7 @@
         },
         methods: {
             getSeats() {
+                console.log(process.env.VUE_APP_TEST);
                 // have to make sure we use the this of the vue module because it's different when it gets to the call back in axios.get
                 let self = this;
                 let url = config.GET_SEAT_URL;

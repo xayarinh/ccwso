@@ -1,3 +1,5 @@
+const Dotenv = require('dotenv-webpack');
+
 module.exports = {
 
 
@@ -8,7 +10,6 @@ module.exports = {
     resolve: {
         alias: {
             vue: './vue.js'
-
         }
     },
     module: {
@@ -41,7 +42,10 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    plugins: [ new Dotenv()]
+
+
 
 
 

@@ -1186,6 +1186,7 @@ module.exports = defaults;
 
 
 
+
 /* harmony default export */ __webpack_exports__["a"] = ({
     name: "SeatSection",
     props: ['section_data'],
@@ -1200,6 +1201,7 @@ module.exports = defaults;
     },
     methods: {
         getSeats() {
+            console.log("5000");
             // have to make sure we use the this of the vue module because it's different when it gets to the call back in axios.get
             let self = this;
             let url = __WEBPACK_IMPORTED_MODULE_1__app_config_js___default.a.GET_SEAT_URL;
