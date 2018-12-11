@@ -7,7 +7,7 @@ try {
     const path = require('path');
     const seatRoute = require('./app/routes/seatRoute.js');
     const app = express();
-    //const dotenv = require('dotenv').config();
+    const dotenv = require('dotenv').config();
     mongoose.connect(process.env.DB_URL, { useNewUrlParser: true });
     const port = process.env.PORT || 5000;
     app.use(bodyParser.json());
