@@ -1170,8 +1170,6 @@ module.exports = defaults;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_config_js__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_config_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__app_config_js__);
 //
 //
 //
@@ -1183,7 +1181,6 @@ module.exports = defaults;
 //
 //
 //
-
 
 
 
@@ -1201,10 +1198,10 @@ module.exports = defaults;
     },
     methods: {
         getSeats() {
-            console.log("5000");
+            console.log("http://localhost:5000/api/getSeats/");
             // have to make sure we use the this of the vue module because it's different when it gets to the call back in axios.get
             let self = this;
-            let url = __WEBPACK_IMPORTED_MODULE_1__app_config_js___default.a.GET_SEAT_URL;
+            let url = "http://localhost:5000/api/getSeats/";
             let params = {
                 params: {
                     section_data: this.section_data
@@ -11669,7 +11666,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(7);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_352516be_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_352516be_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__ = __webpack_require__(50);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -11798,7 +11795,7 @@ module.exports = function listToStyles (parentId, list) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SeatMap_vue__ = __webpack_require__(8);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_8b097d5e_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SeatMap_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_8b097d5e_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SeatMap_vue__ = __webpack_require__(49);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -11894,7 +11891,7 @@ exports.push([module.i, "\n#map-container[data-v-8b097d5e] {\n    height: 100%;\
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SeatSection_vue__ = __webpack_require__(9);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_12aa37da_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SeatSection_vue__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_12aa37da_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SeatSection_vue__ = __webpack_require__(48);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -12873,16 +12870,6 @@ module.exports = function spread(callback) {
 
 /***/ }),
 /* 48 */
-/***/ (function(module, exports) {
-
-const APP_PORT = 5000;
-const DB_URL = 'mongodb://xayarinh2108:Jomamma101@ds129484.mlab.com:29484/ccwso';
-// const GET_SEAT_URL = 'http://localhost:5000/api/getSeats/';
-const GET_SEAT_URL = 'https://ccwso.herokuapp.com/api/getSeats/';
-module.exports = { APP_PORT, DB_URL, GET_SEAT_URL };
-
-/***/ }),
-/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12910,7 +12897,7 @@ if (false) {
 }
 
 /***/ }),
-/* 50 */
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12937,7 +12924,7 @@ if (false) {
 }
 
 /***/ }),
-/* 51 */
+/* 50 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

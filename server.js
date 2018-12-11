@@ -3,14 +3,12 @@ try {
     const express = require('express');
     const mongoose = require('mongoose');
     const bodyParser = require('body-parser'); // this will parse the body of request
-    const config = require('./app/config.js');
-    const insert = require('./app/insert.js');
     const Customer = require('./app/data_model/customer_model.js'); // User Data Model
     const path = require('path');
     const seatRoute = require('./app/routes/seatRoute.js');
     const app = express();
-    require('dotenv').config();
-    console.log(process.env.VUE_APP_TEST);
+    const dotenv = require('dotenv').config();
+    mongoose.connect(process.env.DB_URL, { useNewUrlParser: true });
     const port = process.env.PORT || 5000;
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
