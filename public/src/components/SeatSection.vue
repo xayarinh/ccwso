@@ -26,12 +26,12 @@
         },
         methods: {
             getSeats() {
-                console.log(process.env.VUE_APP_GET_SEAT_URL);
-                console.log(process.env.VUE_APP_NODE_ENV);
+                console.log(process.env.GET_SEAT_URL);
+                console.log(process.env.NODE_ENV);
                 console.log(process.env.NODE_ENV);
                 // have to make sure we use the this of the vue module because it's different when it gets to the call back in axios.get
                 let self = this;
-                let url = process.env.VUE_APP_GET_SEAT_URL;
+                let url = process.env.GET_SEAT_URL;
                 let params = {
                     params: {
                         section_data: this.section_data
