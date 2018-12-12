@@ -11,6 +11,7 @@
 
 <script>
     import axios from 'axios'
+    import config from '../../../app/config.js'
 
     export default {
         name: "SeatSection",
@@ -26,12 +27,10 @@
         },
         methods: {
             getSeats() {
-                console.log(process.env.GET_SEAT_URL);
-                console.log(process.env.NODE_ENV);
-                console.log(process.env.NODE_ENV);
+                console.log(config.GET_SEAT_URL);
                 // have to make sure we use the this of the vue module because it's different when it gets to the call back in axios.get
                 let self = this;
-                let url = process.env.GET_SEAT_URL;
+                let url = config.GET_SEAT_URL;
                 let params = {
                     params: {
                         section_data: this.section_data

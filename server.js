@@ -8,10 +8,6 @@ try {
     const seatRoute = require('./app/routes/seatRoute.js');
     const app = express();
     const dotenv = require('dotenv').config();
-    if(process.env.NODE_ENV === 'production'){
-        process.env['GET_SEAT_URL'] = 'https://ccwso.herokuapp.com/api/getSeats/';
-    }
-    console.log(process.env.NODE_ENV);
     mongoose.connect(process.env.DB_URL, { useNewUrlParser: true });
     const port = process.env.PORT || 5000;
     app.use(bodyParser.json());
