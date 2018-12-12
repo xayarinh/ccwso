@@ -1201,10 +1201,10 @@ module.exports = defaults;
     },
     methods: {
         getSeats() {
-            console.log(__WEBPACK_IMPORTED_MODULE_1__app_config_js___default.a.GET_SEAT_URL);
+            console.log("http://localhost:5000/api/getSeats/");
             // have to make sure we use the this of the vue module because it's different when it gets to the call back in axios.get
             let self = this;
-            let url = __WEBPACK_IMPORTED_MODULE_1__app_config_js___default.a.GET_SEAT_URL;
+            let url = "http://localhost:5000/api/getSeats/";
             let params = {
                 params: {
                     section_data: this.section_data

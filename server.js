@@ -8,6 +8,7 @@ try {
     const seatRoute = require('./app/routes/seatRoute.js');
     const app = express();
     const dotenv = require('dotenv').config();
+    console.log('test', process.env.GET_SEAT_URL);
     mongoose.connect(process.env.DB_URL, { useNewUrlParser: true });
     const port = process.env.PORT || 5000;
     app.use(bodyParser.json());
