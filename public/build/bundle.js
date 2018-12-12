@@ -12875,9 +12875,8 @@ module.exports = function spread(callback) {
 /* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(process) {//const dotenv = require('dotenv').config();
+/* WEBPACK VAR INJECTION */(function(process) {// const dotenv = require('dotenv').config();
 let GET_SEAT_URL = 'http://localhost:5000/api/getSeats/';
-console.log('proces', process.env.NODE_ENV);
 if (process.env.NODE_ENV === 'production') {
    GET_SEAT_URL = 'https://ccwso.herokuapp.com/api/getSeats/';
 }
