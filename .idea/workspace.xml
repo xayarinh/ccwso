@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93f6dd68-80b7-4e64-9c20-b9953dc5768d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/public/src/components/SeatSection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/components/SeatSection.vue" afterDir="false" />
-    </list>
+    <list default="true" id="93f6dd68-80b7-4e64-9c20-b9953dc5768d" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -55,14 +53,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SeatSection.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SeatSection.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/src/components/SeatSection.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="50" column="32" lean-forward="true" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
+            <state relative-caret-position="695">
+              <caret line="59" column="42" lean-forward="true" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
               <folding>
                 <element signature="e#1679#1704#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SeatMap.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/src/components/SeatMap.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Seat.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/src/components/Seat.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -85,10 +101,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PurchaseSection.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PurchaseSection.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/src/components/PurchaseSection.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
+            <state relative-caret-position="554">
               <caret line="68" column="61" lean-forward="true" selection-start-line="68" selection-start-column="61" selection-end-line="68" selection-end-column="61" />
               <folding>
                 <element signature="e#587#593#1" expanded="true" />
@@ -325,12 +341,12 @@
       <workItem from="1545248118661" duration="8679000" />
       <workItem from="1545321218799" duration="22595000" />
       <workItem from="1546461076325" duration="9501000" />
-      <workItem from="1546616795070" duration="4552000" />
+      <workItem from="1546616795070" duration="4793000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141861000" />
+    <option name="totallyTimeSpent" value="142102000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
@@ -482,13 +498,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/src/components/Seat.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/purchaseForm.html" />
     <entry file="file://$PROJECT_DIR$/app/data_model/customer_model.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -503,13 +512,6 @@
     <entry file="file://$PROJECT_DIR$/public/src/main.js" />
     <entry file="file://$PROJECT_DIR$/public/src/App.vue" />
     <entry file="file://$PROJECT_DIR$/public/src/App2.vue" />
-    <entry file="file://$PROJECT_DIR$/public/src/components/SeatMap.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/build/SeatMapApp.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -573,18 +575,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/src/components/PurchaseSection.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="68" column="61" lean-forward="true" selection-start-line="68" selection-start-column="61" selection-end-line="68" selection-end-column="61" />
-          <folding>
-            <element signature="e#587#593#1" expanded="true" />
-            <element signature="e#635#641#1" expanded="true" />
-            <element signature="e#683#689#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -599,17 +589,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/purchase_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -625,10 +615,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/src/components/SeatSection.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="50" column="32" lean-forward="true" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
+        <state relative-caret-position="695">
+          <caret line="59" column="42" lean-forward="true" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
           <folding>
             <element signature="e#1679#1704#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/src/components/SeatMap.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="8" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/src/components/Seat.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/src/components/PurchaseSection.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="68" column="61" lean-forward="true" selection-start-line="68" selection-start-column="61" selection-end-line="68" selection-end-column="61" />
+          <folding>
+            <element signature="e#587#593#1" expanded="true" />
+            <element signature="e#635#641#1" expanded="true" />
+            <element signature="e#683#689#1" expanded="true" />
           </folding>
         </state>
       </provider>
