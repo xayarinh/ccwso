@@ -30513,8 +30513,10 @@ function removeBVPO(el) {
     methods: {
         getSeats() {
             // have to make sure we use the this of the vue module because it's different when it gets to the call back in axios.get
+            console.log('change?');
             let self = this;
-            let url = "http://localhost:5000/api/getSeats/";
+            // let url = process.env.GET_SEAT_URL;
+            let url = 'https://ccwso.herokuapp.com/api/getSeats/';
             let params = {
                 params: {
                     section_data: this.section_data
@@ -30955,7 +30957,8 @@ const EventBus = new __WEBPACK_IMPORTED_MODULE_0__vue_js___default.a();
             }
         },
         submitSeats() {
-            let url = 'http://localhost:5000/getPurchaseForm/';
+            // let url = 'http://localhost:5000/getPurchaseForm/';
+            let url = 'https://ccwso.herokuapp.com/getPurchaseForm/';
             url += '?seats=' + JSON.stringify(this.selectedSeats);
             window.location.href = url;
         }
