@@ -51,7 +51,6 @@
                 console.log('change?');
                 let self = this;
                 // let url = process.env.GET_SEAT_URL;
-
                 let url = 'https://ccwso.herokuapp.com/api/getSeats/';
                 let params = {
                     params: {
