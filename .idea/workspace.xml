@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93f6dd68-80b7-4e64-9c20-b9953dc5768d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/src/components/SeatSection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/components/SeatSection.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -49,8 +50,8 @@
       <file leaf-file-name="SeatSection.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/src/components/SeatSection.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+            <state relative-caret-position="468">
+              <caret line="46" column="10" lean-forward="true" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
               <folding>
                 <element signature="e#1679#1704#0" expanded="true" />
               </folding>
@@ -339,12 +340,12 @@
       <workItem from="1545248118661" duration="8679000" />
       <workItem from="1545321218799" duration="22595000" />
       <workItem from="1546461076325" duration="9501000" />
-      <workItem from="1546616795070" duration="5109000" />
+      <workItem from="1546616795070" duration="5652000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142418000" />
+    <option name="totallyTimeSpent" value="142961000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
@@ -635,8 +636,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/src/components/SeatSection.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+        <state relative-caret-position="468">
+          <caret line="46" column="10" lean-forward="true" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
           <folding>
             <element signature="e#1679#1704#0" expanded="true" />
           </folding>

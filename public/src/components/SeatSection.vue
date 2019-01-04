@@ -51,18 +51,18 @@
                 let self = this;
                 // let url = process.env.GET_SEAT_URL;
                 console.log('change?');
-                let url = 'https://ccwso.herokuapp.com/api/getSeats/';
-                let params = {
-                    params: {
-                        section_data: this.section_data
-                    }
-                };
-                axios.get(url, params).then(function (res){
-                    self.seats = res.data;
-                    self.seatsLoaded = true;
-                }).catch(function(error){
-                    console.log(error);
-                });
+                // let url = 'https://ccwso.herokuapp.com/api/getSeats/';
+                // let params = {
+                //     params: {
+                //         section_data: this.section_data
+                //     }
+                // };
+                // axios.get(url, params).then(function (res){
+                //     self.seats = res.data;
+                //     self.seatsLoaded = true;
+                // }).catch(function(error){
+                //     console.log(error);
+                // });
             }
         },
         components: {Seat}
