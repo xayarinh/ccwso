@@ -1,11 +1,12 @@
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-
-
-    entry: './public/src/main.js',
+    entry: {
+        SeatMapApp: './public/src/seat_map_main.js',
+        PurchaseFormApp: './public/src/purchase_form_main.js'
+    },
     output: {
-        filename: './public/build/bundle.js'
+        filename: './public/build/[name].js'
     },
     resolve: {
         alias: {
@@ -44,9 +45,4 @@ module.exports = {
         ]
     },
     plugins: [ new Dotenv()]
-
-
-
-
-
 };
