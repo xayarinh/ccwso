@@ -4,32 +4,38 @@
             <tr>
                 <td>
                     <table id="selected-seat-table">
-                        <thead>
+                            <tr style="height: 10%; width: 100%; border-bottom: 1px black solid;">
+                                <th style="text-align: center;">Seat</th>
+                                <th style="text-align: center;">Section</th>
+                                <th style="text-align: center;">Price</th>
+                            </tr>
+                            <tr style="height: 80%; width: 100%; border-bottom: 1px black solid;">
+                                <td colspan="3">
+                                    <table id="seat-table" style="height: 100%; width: 100%;">
+                                        <tr v-for="seat in selectedSeats">
+                                            <td style="text-align: center;">{{seat.label}}</td>
+                                            <td style="text-align: center;">{{seat.section}}</td>
+                                            <td style="text-align: center;">${{seat.price}}</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr style="height: 10%; width: 100%;">
+                                <td style="text-align: center;">Total Seats: {{totalSeats}}</td>
+                                <td style="text-align: center;"></td>
+                                <td style="text-align: center;">Amount Due: ${{totalPrice}}</td>
+                            </tr>
                             <tr>
-                                <th>Seat</th>
-                                <th>Section</th>
-                                <th>Price</th>
+                                <td></td>
+                                <td></td>
+                                <td style="text-align: center;">
+                                    <router-link :to="{name: 'PurchaseFormApp', params: {selectedSeats: selectedSeats}}">
+                                        <b-button id="myButton" v-on:click="">Checkout</b-button>
+                                    </router-link>
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <template v-if="selectedSeats.length === 0">
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                            </template>
-                            <tr v-for="seat in selectedSeats">
-                                <td>{{seat.label}}</td>
-                                <td>{{seat.section.name}}</td>
-                                <td>${{seat.price}}</td>
-                            </tr>
-                        </tbody>
                     </table>
                 </td>
-            </tr>
-            <tr>
-                <td>Total Seats: {{totalSeats}}</td>
-                <td>Amount Due: ${{totalPrice}}</td>
-                <td><button v-on:click="submitSeats()">Confirm Seats</button></td>
             </tr>
         </table>
     </div>
@@ -37,7 +43,6 @@
 
 <script>
     import EventBus from '../bus.js'
-    import axios from 'axios'
 
     export default {
         name: "PurchaseSection",
@@ -71,12 +76,6 @@
                     this.totalPrice -= seat.price;
                     this.totalSeats--;
                 }
-            },
-            submitSeats(){
-                // let url = 'http://localhost:5000/getPurchaseForm/';
-                let url = 'https://ccwso.herokuapp.com/getPurchaseForm/';
-                url += '?seats=' + JSON.stringify(this.selectedSeats);
-                window.location.href = url;
             }
         }
     }
@@ -87,34 +86,27 @@
         height: 100%;
         width: 100%;
         border: solid 1px black;
+        border-radius: 20px;
     }
     #purchase-table {
         height: 100%;
         width: 100%;
     }
     #purchase-table tr {
-        height: 50%;
         width: 100%;
-        border: 5px solid darkred;
     }
     #purchase-table td {
-        /*height: 50%;*/
         width: 100%;
-        border: 1px solid olive;
     }
     #selected-seat-table {
        height: 100%;
        width: 100%;
-       /*border: 10px solid purple;*/
     }
     #selected-seat-table td{
-        /*height: 100%;*/
         width: 33%;
-        /*border: 10px solid purple;*/
+        height: 6.66%;
     }
-    /*#selected-seat-table tr {*/
-        /*!*width: 100%;*!*/
-        /*!*height: 10px;*!*/
-        /*border: 1px solid brown;*/
-    /*}*/
+    #seat-table tr {
+        border-bottom: 1px solid black;
+    }
 </style>

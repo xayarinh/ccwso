@@ -10,13 +10,11 @@ router.route('/getSeats/').get(function(req, res){
     getSeats(sectionName, res);  // return seats for this section
 });
 
-// router.route('/getPurchaseForm/').get(function(req, res){
-//     var url = path.join(__dirname + '../../../public/purchase_form.html');
-//     console.log(url);
-//     res.sendFile(path.resolve(url));
-//
-// });
-
+router.route('/submitSeats/').post(function(req, res){
+    var selectedSeatsArr = req.body.selectedSeats;
+    console.log('selectedSeats ' + selectedSeatsArr.length, selectedSeatsArr);
+    submitSeats(selectedSeatsArr, res);
+});
 
 module.exports = router;
 
@@ -36,3 +34,16 @@ function getSeats(sectionName, res){
         });
     });
 }
+
+function submitSeats(selectedSeatsArr, res){
+    // Loop through the selected seats and set available to false
+    for(let i = 0; i < selectedSeatsArr.length; i++){
+        let seatId = selectedSeatsArr[i]._id;
+        Seat.updateOne({_id: seatId}, {$set: {available: false}}, function(error, result){
+            if(error) console.log('Error Submitting Seat ' + seatId, error);
+            console.log('result', result);
+        })
+    }
+    res.json({error: false});
+}
+

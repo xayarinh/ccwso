@@ -1,6 +1,15 @@
 <template>
     <div v-if="seatsLoaded" id="seat-section-container">
+
         <table id="section-table">
+            <tr>
+                <td colspan="4">
+                    {{section_name}}
+                </td>
+                <!--<td>-->
+                    <!--<div><h1 id="section-header" style="colspan: all;"></h1></div>-->
+                <!--</td>-->
+            </tr>
             <tr>
                 <td><seat v-bind:seats_arr="seats" v-bind:seat_index="0"></seat></td>
                 <td><seat v-bind:seats_arr="seats" v-bind:seat_index="1"></seat></td>
@@ -35,7 +44,7 @@
 
     export default {
         name: "SeatSection",
-        props: ['section_data'],
+        props: ['section_data', 'section_name'],
         data() {
             return {
                 seats: [], // seat info from database
@@ -73,27 +82,34 @@
     #seat-section-container {
         height: 100%;
         width: 100%;
-        border: solid deepskyblue 1px;
+        /*border: solid deepskyblue 1px;*/
     }
 
     #section-table {
 
         /*padding: 10% 10% 10% 10%;*/
-        padding: 70px 70px 70px 70px;
+        /*padding: 70px 70px 70px 70px;*/
         height: 100%;
         width: 100%;
 
 
     }
 
-    #section-table td {
+    #section-header {
+        text-align: center;
+        font-size: 10px;
+    }
 
+
+
+    #section-table td {
         width: 25%;
+        height: 10%;
         text-align: center;
     }
 
     #section-table tr {
-        height: 25%;
-
+        height: 20%;
+        width: 100%;
     }
 </style>

@@ -2,8 +2,9 @@ const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     entry: {
-        SeatMapApp: './public/src/seat_map_main.js',
-        PurchaseFormApp: './public/src/purchase_form_main.js'
+        App: './public/src/app.js',
+        // SeatMapApp: './public/src/seat_map_main.js',
+        // PurchaseFormApp: './public/src/purchase_form_main.js'
     },
     output: {
         filename: './public/build/[name].js'
