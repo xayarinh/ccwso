@@ -59,7 +59,7 @@
                 // have to make sure we use the this of the vue module because it's different when it gets to the call back in axios.get
                 let self = this;
                 // let url = process.env.GET_SEAT_URL;
-                let url = 'https://ccwso.herokuapp.com/api/getSeats/';
+                let url = 'http://ccwso.herokuapp.com/api/getSeats/';
                 let params = {
                     params: {
                         section_data: this.section_data

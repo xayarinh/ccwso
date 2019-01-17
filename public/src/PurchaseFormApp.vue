@@ -235,7 +235,7 @@
 
                 if(this.errors.length === 0){
                     // var submitSeatUrl = 'http://localhost:5000/api/submitSeats/';
-                    let submitSeatUrl = 'https://ccwso.herokuapp.com/api/submitSeats/';
+                    let submitSeatUrl = 'http://ccwso.herokuapp.com/api/submitSeats/';
                     var params = {selectedSeats: this.selectedSeats};
                     var self = this;
                     axios.post(submitSeatUrl, params).then(function(res){
