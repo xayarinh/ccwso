@@ -28,8 +28,9 @@ function getSeats(sectionName, res){
         if(error) console.error('ERROR: Could not retrieve section!', error);
         if(section.length > 1) console.error('ERROR: There were more than one section retrieve with ');
         let sectionId = section[0]._id;
-        Seat.find({'section': sectionId}).sort({label: '1'}).exec(function(error, seats){
+        Seat.find({'section': sectionId}).populate('section').sort({label: '1'}).exec(function(error, seats){
             if(error) console.log('ERROR: Could net retrieve seats!', error);
+            console.log('seats',seats);
             res.json(seats);
         });
     });

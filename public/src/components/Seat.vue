@@ -2,6 +2,7 @@
     <button v-bind:id="seats_arr[seat_index].label"
             v-bind:style="{'background-color': color}"
             v-on:click="setSeatSelected(seat_index)"
+            v-bind:class="{'hvr-shrink': seats_arr[seat_index].available}"
             v-bind:disabled="!seats_arr[seat_index].available">
         {{seats_arr[seat_index].label}}
     </button>
@@ -30,9 +31,9 @@
                 let seatAvailable = this.seats_arr[index].available;
                 let seatSelected = this.seats_arr[index].selected;
                 if(seatAvailable){
-                    if(seatSelected) this.color = '#FFA500'; // orange
-                    else return this. color = '#5CDB95'; // green
-                } else return this.color = '#E85A4F'; //red
+                    if(seatSelected) this.color = '#8EE4AF'; // orange
+                    else return this. color = '#FFFFFF'; // white
+                } else return this.color = '#d3d3d3' ; //grey
             },
             initSeatSelect(index){
                 this.seats_arr[index].selected = false;
@@ -47,9 +48,17 @@
 </script>
 
 <style scoped>
+
+    @import '../../hover.css';
+
     button {
         height: 75%;
         width: 75%;
         border-radius: 15px;
+    }
+
+    button:focus {
+        outline: 0;
+        border: 1px black solid;
     }
 </style>

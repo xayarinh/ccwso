@@ -1,14 +1,8 @@
 <template>
     <div v-if="seatsLoaded" id="seat-section-container">
-
         <table id="section-table">
             <tr>
-                <td colspan="4">
-                    {{section_name}}
-                </td>
-                <!--<td>-->
-                    <!--<div><h1 id="section-header" style="colspan: all;"></h1></div>-->
-                <!--</td>-->
+                <td colspan="4">{{section_name}}</td>
             </tr>
             <tr>
                 <td><seat v-bind:seats_arr="seats" v-bind:seat_index="0"></seat></td>
@@ -78,30 +72,14 @@
 </script>
 
 <style scoped>
-
     #seat-section-container {
         height: 100%;
         width: 100%;
-        /*border: solid deepskyblue 1px;*/
     }
-
     #section-table {
-
-        /*padding: 10% 10% 10% 10%;*/
-        /*padding: 70px 70px 70px 70px;*/
         height: 100%;
         width: 100%;
-
-
     }
-
-    #section-header {
-        text-align: center;
-        font-size: 10px;
-    }
-
-
-
     #section-table td {
         width: 25%;
         height: 10%;

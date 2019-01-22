@@ -12,9 +12,9 @@
                             <tr style="height: 80%; width: 100%; border-bottom: 1px black solid;">
                                 <td colspan="3">
                                     <table id="seat-table" style="height: 100%; width: 100%;">
-                                        <tr v-for="seat in selectedSeats">
+                                        <tr v-for="(seat, index) in selectedSeats" v-bind:class="{'bottom-top': index > 0}">
                                             <td style="text-align: center;">{{seat.label}}</td>
-                                            <td style="text-align: center;">{{seat.section}}</td>
+                                            <td style="text-align: center;">{{seat.section.label}}</td>
                                             <td style="text-align: center;">${{seat.price}}</td>
                                         </tr>
                                     </table>
@@ -30,7 +30,7 @@
                                 <td></td>
                                 <td style="text-align: center;">
                                     <router-link :to="{name: 'PurchaseFormApp', params: {selectedSeats: selectedSeats}}">
-                                        <b-button id="myButton" v-on:click="">Checkout</b-button>
+                                        <b-button id="myButton" v-bind:class="{'hvr-shrink': true, 'button-hidden': selectedSeats.length === 0}">Checkout</b-button>
                                     </router-link>
                                 </td>
                             </tr>
@@ -76,12 +76,15 @@
                     this.totalPrice -= seat.price;
                     this.totalSeats--;
                 }
-            }
+            },
         }
     }
 </script>
 
 <style scoped>
+
+    @import '../../hover.css';
+
     #purchase-container {
         height: 100%;
         width: 100%;
@@ -106,7 +109,13 @@
         width: 33%;
         height: 6.66%;
     }
-    #seat-table tr {
-        border-bottom: 1px solid black;
+
+    .bottom-top {
+        border-top: 1px solid black;
     }
+
+    .button-hidden {
+        visibility: hidden;
+    }
+
 </style>

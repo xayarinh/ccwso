@@ -12,24 +12,27 @@
             </template>
             <tr>
                 <td>
-                    <b-btn v-b-toggle.contact-collapse id="contact-btn-collapse">Contact Information</b-btn>
+                    <b-btn v-b-toggle.contact-collapse id="contact-btn-collapse" v-bind:class="{'hvr-shrink': true}">Contact Information</b-btn>
                     <b-collapse visible id="contact-collapse">
                             <table id="contact-table">
                                 <tr><td>&nbsp;</td></tr>
-                                <tr style="width: 100%;">
-                                    <td style="width: 100%;">
-                                        <table style="width: 100%;">
+                                <tr>
+                                    <td>
+                                        <table>
                                             <tr style="width: 100%;">
-                                                <td style="width: 45%;">
-                                                    <b-form-group label="First Name *">
-                                                        <b-form-input id="first-name" type="text" required  v-model="firstname"></b-form-input>
-                                                    </b-form-group>
+                                                <td style="width: 50%;">
+                                                    <div class="group">
+                                                        <input id="first-name" type="text" required  v-model="firstname"/>
+                                                        <span class="highlight"></span><span class="bar"></span>
+                                                        <label>First Name</label>
+                                                    </div>
                                                 </td>
-                                                <td style="width: 10%;"></td>
-                                                <td style="width: 45%;">
-                                                    <b-form-group label="Last Name *">
-                                                        <b-form-input id="last-name" type="text" required v-model="lastname"></b-form-input>
-                                                    </b-form-group>
+                                                <td style="width: 50%;">
+                                                    <div class="group">
+                                                        <input id="last-name" type="text" required v-model="lastname"/>
+                                                        <span class="highlight"></span><span class="bar"></span>
+                                                        <label>Last Name</label>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         </table>
@@ -39,18 +42,20 @@
                                     <td>
                                         <table>
                                             <tr>
-                                                <td style="width: 60%;">
-                                                    <b-form-group label="Street Address *" required>
-                                                        <input style="width: 100%;" ref="autocomplete" type="text" role="presentation" autocomplete="nope" v-model="street"/>
-                                                    </b-form-group>
+                                                <td>
+                                                    <div class="group">
+                                                        <input ref="autocomplete" type="text" required v-model="street" style="width: 80%;" placeholder=""/>
+                                                        <span class="highlight"></span><span class="bar"></span>
+                                                        <label>Street Address</label>
+                                                    </div>
                                                 </td>
-                                                <td style="width: 10%;"></td>
-                                                <td style="width: 20%;">
-                                                    <b-form-group label="Apt/Unit">
-                                                        <b-form-input id="address-2" placeholder="Optional" type="text"></b-form-input>
-                                                    </b-form-group>
+                                                <td>
+                                                    <div class="group">
+                                                        <input id="address-2" type="text" required v-model="street2" style="width: 30%;"/>
+                                                        <span class="highlight"></span><span class="bar"></span>
+                                                        <label>Apt/Unit (Optional)</label>
+                                                    </div>
                                                 </td>
-                                                <td style="width: 10%;"></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -60,24 +65,27 @@
                                     <td>
                                         <table>
                                             <tr>
-                                                <td style="width: 30%;">
-                                                    <b-form-group label="City *" required>
-                                                        <b-form-input id="city" type="text" required v-model="city"></b-form-input>
-                                                    </b-form-group>
+                                                <td>
+                                                    <div class="group">
+                                                        <input id="city" type="text" required v-model="city" style="width: 60%;"/>
+                                                        <span class="highlight"></span><span class="bar"></span>
+                                                        <label>City</label>
+                                                    </div>
                                                 </td>
-                                                <td style="width: 5%;"></td>
-                                                <td style="width: 10%;">
-                                                    <b-form-group label="State *" required>
-                                                        <b-form-input id="state" type="text" required v-model="state"></b-form-input>
-                                                    </b-form-group>
+                                                <td style="width: 20%;">
+                                                    <div class="group" >
+                                                        <input id="state" type="text" required v-model="state" style="width: 25%;"/>
+                                                        <span class="highlight"></span><span class="bar"></span>
+                                                        <label>State</label>
+                                                    </div>
                                                 </td>
-                                                <td style="width: 5%;"></td>
-                                                <td style="width: 30%;">
-                                                    <b-form-group label="Zip Code *" required>
-                                                        <b-form-input id="zip" type="text" required v-model="zip"></b-form-input>
-                                                    </b-form-group>
+                                                <td>
+                                                    <div class="group">
+                                                        <input id="zip" type="text" required v-model="zip" style="width: 50%;"/>
+                                                        <span class="highlight"></span><span class="bar"></span>
+                                                        <label>Zip Code</label>
+                                                    </div>
                                                 </td>
-                                                <td style="width: 20%;"></td>
                                             </tr>
                                         </table>
                                     </td>
@@ -86,16 +94,19 @@
                                     <td>
                                         <table>
                                             <tr>
-                                                <td style="width: 40%;">
-                                                    <b-form-group label="Phone Number *">
-                                                        <b-form-input id="phone" type="tel" required v-model="phone"></b-form-input>
-                                                    </b-form-group>
+                                                <td>
+                                                    <div class="group">
+                                                        <input id="phone" type="tel" required v-model="phone"/>
+                                                        <span class="highlight"></span><span class="bar"></span>
+                                                        <label>Phone Number</label>
+                                                    </div>
                                                 </td>
-                                                <td style="width: 20%;"></td>
-                                                <td style="width: 40%;">
-                                                    <b-form-group label="Email (Optional)">
-                                                        <b-form-input id="email" type="email"></b-form-input>
-                                                    </b-form-group>
+                                                <td>
+                                                    <div class="group">
+                                                        <input id="email" type="email" required v-model="email"/>
+                                                        <span class="highlight"></span><span class="bar"></span>
+                                                        <label>Email (Optional)</label>
+                                                    </div>
                                                 </td>
                                             </tr>
                                         </table>
@@ -108,7 +119,7 @@
             </tr>
             <tr>
                 <td>
-                    <b-btn v-b-toggle.purchase-collapse id="purchase-btn-collapse">Purchase Details</b-btn>
+                    <b-btn v-b-toggle.purchase-collapse id="purchase-btn-collapse" v-bind:class="{'hvr-shrink': true}">Purchase Details</b-btn>
                     <b-collapse visible id="purchase-collapse">
                         <table>
                             <tr><td>&nbsp;</td></tr>
@@ -120,10 +131,9 @@
                             <tr><td></td><td>Total: ${{total}}</td></tr>
                             <tr>
                                 <td>
-                                    <b-button type="button" v-on:click="submitPurchase()">Confirm Purchase</b-button>
+                                    <b-button type="button" v-on:click="submitPurchase()" v-bind:class="{'hvr-shrink': true}">Confirm Purchase</b-button>
                                 </td>
                             </tr>
-
                         </table>
                     </b-collapse>
                 </td>
@@ -132,16 +142,20 @@
         </b-form>
     </div>
     <div v-else-if="success">
-        <p>purchase was successful</p>
-        <div class="checkmark-circle">
-            <div class="background"></div>
-            <div class="checkmark"></div>
-        </div>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+            <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
+            <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
+        </svg>
+        <p class="success">Purchase Confirmed!</p>
     </div>
     <div v-else>
-        <p>Oops! Sorry about that, something went wrong with your purchase. Please go back to the seat map and select your seats again.</p>
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+            <circle class="path circle" fill="none" stroke="#D06079" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
+            <line class="path line" fill="none" stroke="#D06079" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="34.4" y1="37.9" x2="95.8" y2="92.3"/>
+            <line class="path line" fill="none" stroke="#D06079" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="95.8" y1="38" x2="34.4" y2="92.2"/>
+        </svg>
+        <p class="error">Oops! Sorry about that, something went wrong with your purchase. Please go back to the seat map and select your seats again.</p>
     </div>
-
 </template>
 <script>
     import axios from 'axios'
@@ -151,14 +165,14 @@
         data() {
             return {
                 firstname: '',
-                lastname: null,
-                street: null,
-                street2: null,
-                city: null,
-                state: null,
-                zip: null,
-                phone: null,
-                email: null,
+                lastname: '',
+                street: '',
+                street2: '',
+                city: '',
+                state: '',
+                zip: '',
+                phone: '',
+                email: '',
                 hasSeats: false,
                 success: false,
                 total: 0,
@@ -214,37 +228,40 @@
                 if(this.firstname === ''){
                     this.errors.push('First name is required.');
                 }
-                if(this.lastname === null){
+                if(this.lastname === ''){
                     this.errors.push('Last name is required.');
                 }
-                if(this.street === null){
+                if(this.street === ''){
                     this.errors.push('Street address is required.');
                 }
-                if(this.city === null){
+                if(this.city === ''){
                     this.errors.push('City is required.');
                 }
-                if(this.state === null){
+                if(this.state === ''){
                     this.errors.push('State is required.');
                 }
-                if(this.zip === null){
+                if(this.zip === ''){
                     this.errors.push('Zip Code is required.');
                 }
-                if(this.phone === null){
+                if(this.phone === ''){
                     this.errors.push('Phone number is required.');
                 }
-
                 if(this.errors.length === 0){
-                    // var submitSeatUrl = 'http://localhost:5000/api/submitSeats/';
+                    // let submitSeatUrl = 'http://localhost:5000/api/submitSeats/';
                     let submitSeatUrl = 'http://ccwso.herokuapp.com/api/submitSeats/';
-                    var params = {selectedSeats: this.selectedSeats};
-                    var self = this;
+                    let params = {selectedSeats: this.selectedSeats};
+                    let self = this;
                     axios.post(submitSeatUrl, params).then(function(res){
                         console.log('result', res);
                         self.success = true;
                         self.hasSeats = false;
+                        document.title = 'Purchase Confirmation Page';
                     }).catch(function(error){
-                        console.log('Error submiting seats', error);
+                        console.log('Error submitting seats', error);
+                        document.title = 'Error Confirming Purchase';
                     });
+                } else {
+                    window.scrollTo(0,0);
                 }
             }
         }
@@ -254,16 +271,15 @@
 
 <style scoped>
 
+    @import '../hover.css';
+
     #contact-btn-collapse {
-        /*margin: auto;*/
-        /*padding: 10px;*/
     }
 
     #purchase-form {
         border: 1px solid black;
         border-radius: 50px;
-        padding-left: 20%;
-        padding-right: 20%;
+        padding-left: 5%;
     }
 
     #form-table {
@@ -280,57 +296,131 @@
         width: 100%;
     }
 
-    /*:root {*/
-        /*--circle-size: 150px;*/
-        /*--check-height: var(--circle-size)/2;*/
-        /*--check-width: var(--check-height)/2;*/
-        /*--check-left: var(--circle-size)/6;*/
-        /*--check-thickness: var(--circle-size)/10;*/
-    /*}*/
+    .group {
+        position: relative;
+        margin: 40px 0;
+    }
 
-    /*.checkmark-circle {*/
-        /*width: var(--circle-size);*/
-        /*height: var(--circle-size);*/
-        /*position: relative;*/
-        /*display: inline-block;*/
-        /*vertical-align: top;*/
-    /*}*/
-    /*.background {*/
-        /*width: 150px;*/
-        /*height: 150px;*/
-        /*border-radius: 50%;*/
-        /*background: #2EB150;*/
-        /*position: absolute;*/
-    /*}*/
+    textarea {
+        resize: none;
+    }
 
-    /*.checkmark:after {*/
-        /*@include animation-delay(100ms);*/
-        /*@include animation-duration(1s);*/
-        /*@include animation-timing-function(ease);*/
-        /*@include animation-name (checkmark);*/
-        /*@include transform(scaleX(-1) rotate(180deg + -45deg));*/
-        /*@include animation-fill-mode(forwards);*/
-    /*}*/
+    input, textarea{
+        background: none;
+        color: black;
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        display: block;
+        width: 50%;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid #c6c6c6;
+    }
+    input, textarea:focus {
+         outline: none;
+    }
 
-    /*.checkmark:after {*/
-        /*opacity: 1;*/
-        /*height: var(--check-height);*/
-        /*width: var(--check-width);*/
-        /*@include transform-origin(left top);*/
-        /*border-right: var(--check-thickness) solid white;*/
-        /*border-top: var(--check-thickness)  solid white;*/
-        /*border-radius: 2.5px !important;*/
-        /*content: '';*/
-        /*left: var(--check-left) ;*/
-        /*top: var(--check-height) ;*/
-        /*position: absolute;*/
-    /*}*/
+    input:focus ~ label, input:valid ~ label,
+    textarea:focus ~ label,
+    textarea:valid ~ label {
+        top: -14px;
+        font-size: 12px;
+        color: black;
+    }
 
-    /*@include keyframes(checkmark) {*/
-        /*0% { height: 0; width: 0; opacity: 1; }*/
-        /*20% { height: 0; width: var(--check-width); opacity: 1; }*/
-        /*40% { height: var(--check-height); width: var(--check-width); opacity: 1; }*/
-        /*100% { height: var(--check-height); width: var(--check-width); opacity: 1; }*/
-    /*}*/
+    label {
+        color: #c6c6c6;
+        font-size: 16px;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 5px;
+        top: 10px;
+        transition: 300ms ease all;
+    }
+
+    .bar {
+        position: relative;
+        display: block;
+        width: 320px;
+    }
+    .bar:before {
+        content: '';
+        height: 2px;
+        width: 0;
+        bottom: 0px;
+        position: absolute;
+        background: #2196F3;
+        transition: 300ms ease all;
+        left: 0%;
+    }
+
+    svg {
+        width: 100px;
+        display: block;
+        margin: 40px auto 0;
+    }
+    .path {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 0;
+    }
+    .path.circle {
+        -webkit-animation: dash 0.9s ease-in-out;
+        animation: dash 0.9s ease-in-out;
+    }
+    .path.line {
+        stroke-dashoffset: 1000;
+        -webkit-animation: dash 0.9s 0.35s ease-in-out forwards;
+        animation: dash 0.9s 0.35s ease-in-out forwards;
+    }
+    .path.check {
+        stroke-dashoffset: -100;
+        -webkit-animation: dash-check 0.9s 0.35s ease-in-out forwards;
+        animation: dash-check 0.9s 0.35s ease-in-out forwards;
+    }
+    p {
+        text-align: center;
+        margin: 20px 0 60px;
+        font-size: 1.25em;
+    }
+    p.success {
+        color: #73AF55;
+    }
+    p.error {
+        color: #D06079;
+    }
+    @-webkit-keyframes dash {
+        0% {
+            stroke-dashoffset: 1000;
+        }
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+    @keyframes dash {
+        0% {
+            stroke-dashoffset: 1000;
+        }
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+    @-webkit-keyframes dash-check {
+        0% {
+            stroke-dashoffset: -100;
+        }
+        100% {
+            stroke-dashoffset: 900;
+        }
+    }
+    @keyframes dash-check {
+        0% {
+            stroke-dashoffset: -100;
+        }
+        100% {
+            stroke-dashoffset: 900;
+        }
+    }
+
 
 </style>

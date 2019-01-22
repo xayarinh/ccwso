@@ -16,7 +16,15 @@ export default new Router({
             path: '/getPurchaseForm', // Return PurchaseFormApp if clicked submit button
             name: 'PurchaseFormApp',
             component: PurchaseFormApp,
-            props: true
+            props: true,
+            beforeEnter: (to, from, next) => {
+                if(to.params.selectedSeats.length === 0){ // check to make sure customer has selected seats
+                    next(false);
+                } else {
+                    document.title = 'Purchase Form';
+                    next();
+                }
+            }
         }
     ]
 })
