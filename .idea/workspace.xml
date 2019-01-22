@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93f6dd68-80b7-4e64-9c20-b9953dc5768d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/seatRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/seatRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/src/components/SeatSection.vue" beforeDir="false" afterPath="$PROJECT_DIR$/public/src/components/SeatSection.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -47,8 +48,8 @@
       <file leaf-file-name="seatRoute.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes/seatRoute.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+            <state relative-caret-position="405">
+              <caret line="27" column="61" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -62,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SeatSection.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SeatSection.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/src/components/SeatSection.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+            <state relative-caret-position="304">
+              <caret line="48" column="28" lean-forward="true" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
               <folding>
                 <element signature="e#1679#1704#0" expanded="true" />
               </folding>
@@ -124,7 +125,7 @@
         <entry file="file://$PROJECT_DIR$/public/src/PurchaseFormApp.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+              <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="e#760#766#1" expanded="true" />
@@ -144,11 +145,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -230,11 +231,11 @@
         <option value="$PROJECT_DIR$/public/src/components/Seat.vue" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/app/routes/index.js" />
-        <option value="$PROJECT_DIR$/app/routes/seatRoute.js" />
         <option value="$PROJECT_DIR$/public/src/components/PurchaseSection.vue" />
-        <option value="$PROJECT_DIR$/public/src/components/SeatSection.vue" />
         <option value="$PROJECT_DIR$/public/src/PurchaseFormApp.vue" />
         <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/app/routes/seatRoute.js" />
+        <option value="$PROJECT_DIR$/public/src/components/SeatSection.vue" />
       </list>
     </option>
   </component>
@@ -276,6 +277,17 @@
             <path>
               <item name="ccwso" type="b2602c69:ProjectViewProjectNode" />
               <item name="ccwso" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ccwso" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ccwso" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ccwso" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ccwso" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -354,12 +366,12 @@
       <workItem from="1547072594327" duration="7891000" />
       <workItem from="1547141410848" duration="5553000" />
       <workItem from="1547517782967" duration="8199000" />
-      <workItem from="1547650756174" duration="44486000" />
+      <workItem from="1547650756174" duration="44988000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="217709000" />
+    <option name="totallyTimeSpent" value="218211000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-154" y="-1027" width="1680" height="1027" extended-state="0" />
@@ -604,10 +616,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/src/components/SeatMap.vue">
+    <entry file="file://$PROJECT_DIR$/app/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+        <state relative-caret-position="435">
+          <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/src/PurchaseFormApp.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#760#766#1" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#table#0;n#td#0;n#tr#1;n#table#0;n#b-collapse#0;n#td#0;n#tr#0;n#table#0;n#b-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#1;n#table#0;n#b-collapse#0;n#td#0;n#tr#0;n#table#0;n#b-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#1;n#table#0;n#b-collapse#0;n#td#0;n#tr#0;n#table#0;n#b-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#2;n#table#0;n#b-collapse#0;n#td#0;n#tr#0;n#table#0;n#b-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#b-collapse#0;n#td#0;n#tr#0;n#table#0;n#b-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#b-collapse#0;n#td#0;n#tr#0;n#table#0;n#b-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#b-collapse#0;n#td#0;n#tr#0;n#table#0;n#b-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#td#2;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#b-collapse#0;n#td#0;n#tr#0;n#table#0;n#b-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#7664#7670#1" expanded="true" />
+            <element signature="e#8070#8076#1" expanded="true" />
+            <element signature="e#8346#8352#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -628,34 +679,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/src/components/Seat.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="49" column="14" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/routes/seatRoute.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+        <state relative-caret-position="405">
+          <caret line="27" column="61" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
+    <entry file="file://$PROJECT_DIR$/public/src/components/SeatMap.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="33" />
+        <state relative-caret-position="300">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -682,42 +716,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/src/components/Seat.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="14" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/src/components/SeatSection.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+        <state relative-caret-position="304">
+          <caret line="48" column="28" lean-forward="true" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
           <folding>
             <element signature="e#1679#1704#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/src/PurchaseFormApp.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#760#766#1" expanded="true" />
-            <element signature="n#style#0;n#tr#0;n#table#0;n#td#0;n#tr#1;n#table#0;n#b-collapse#0;n#td#0;n#tr#0;n#table#0;n#b-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#1;n#table#0;n#b-collapse#0;n#td#0;n#tr#0;n#table#0;n#b-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#1;n#table#0;n#b-collapse#0;n#td#0;n#tr#0;n#table#0;n#b-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#2;n#table#0;n#b-collapse#0;n#td#0;n#tr#0;n#table#0;n#b-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#b-collapse#0;n#td#0;n#tr#0;n#table#0;n#b-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#b-collapse#0;n#td#0;n#tr#0;n#table#0;n#b-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#b-collapse#0;n#td#0;n#tr#0;n#table#0;n#b-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#td#2;n#tr#0;n#table#0;n#td#0;n#tr#3;n#table#0;n#b-collapse#0;n#td#0;n#tr#0;n#table#0;n#b-form#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#7664#7670#1" expanded="true" />
-            <element signature="e#8070#8076#1" expanded="true" />
-            <element signature="e#8346#8352#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
         </state>
       </provider>
     </entry>
