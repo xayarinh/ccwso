@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93f6dd68-80b7-4e64-9c20-b9953dc5768d" name="Default" comment="" />
+    <list default="true" id="93f6dd68-80b7-4e64-9c20-b9953dc5768d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -118,7 +120,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PurchaseFormApp.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PurchaseFormApp.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/src/PurchaseFormApp.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
@@ -138,6 +140,15 @@
                 <element signature="e#8070#8076#1" expanded="true" />
                 <element signature="e#8346#8352#1" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".env" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -204,7 +215,6 @@
         <option value="$PROJECT_DIR$/public/src/main.js" />
         <option value="$PROJECT_DIR$/public/src/App2.vue" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/public/src/purchase_form_main.js" />
         <option value="$PROJECT_DIR$/public/src/seat_map_main.js" />
         <option value="$PROJECT_DIR$/public/src/components/App.vue" />
@@ -224,6 +234,7 @@
         <option value="$PROJECT_DIR$/public/src/components/PurchaseSection.vue" />
         <option value="$PROJECT_DIR$/public/src/components/SeatSection.vue" />
         <option value="$PROJECT_DIR$/public/src/PurchaseFormApp.vue" />
+        <option value="$PROJECT_DIR$/.env" />
       </list>
     </option>
   </component>
@@ -265,40 +276,6 @@
             <path>
               <item name="ccwso" type="b2602c69:ProjectViewProjectNode" />
               <item name="ccwso" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ccwso" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ccwso" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ccwso" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ccwso" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="data_model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ccwso" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ccwso" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ccwso" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ccwso" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ccwso" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ccwso" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ccwso" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ccwso" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -377,12 +354,12 @@
       <workItem from="1547072594327" duration="7891000" />
       <workItem from="1547141410848" duration="5553000" />
       <workItem from="1547517782967" duration="8199000" />
-      <workItem from="1547650756174" duration="44280000" />
+      <workItem from="1547650756174" duration="44486000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="217503000" />
+    <option name="totallyTimeSpent" value="217709000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-154" y="-1027" width="1680" height="1027" extended-state="0" />
@@ -616,13 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/hover.css.map">
       <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="sourcemapFileViewerProvider" />
@@ -741,6 +711,13 @@
             <element signature="e#8070#8076#1" expanded="true" />
             <element signature="e#8346#8352#1" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
         </state>
       </provider>
     </entry>
