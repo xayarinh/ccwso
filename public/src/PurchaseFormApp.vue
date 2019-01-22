@@ -247,8 +247,7 @@
                     this.errors.push('Phone number is required.');
                 }
                 if(this.errors.length === 0){
-                    // let submitSeatUrl = 'http://localhost:5000/api/submitSeats/';
-                    let submitSeatUrl = 'http://ccwso.herokuapp.com/api/submitSeats/';
+                    let submitSeatUrl = process.env.SUBMIT_SEAT_URL;
                     let params = {selectedSeats: this.selectedSeats};
                     let self = this;
                     axios.post(submitSeatUrl, params).then(function(res){

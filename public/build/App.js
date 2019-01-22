@@ -16809,7 +16809,6 @@ var ToolTip = function () {
             // have to make sure we use the this of the vue module because it's different when it gets to the call back in axios.get
             let self = this;
             let url = "http://ccwso.herokuapp.com/api/getSeats/";
-            // let url = 'http://ccwso.herokuapp.com/api/getSeats/';
             let params = {
                 params: {
                     section_data: this.section_data
@@ -17511,8 +17510,7 @@ const EventBus = new __WEBPACK_IMPORTED_MODULE_0__vue_js___default.a();
                 this.errors.push('Phone number is required.');
             }
             if (this.errors.length === 0) {
-                // let submitSeatUrl = 'http://localhost:5000/api/submitSeats/';
-                let submitSeatUrl = 'http://ccwso.herokuapp.com/api/submitSeats/';
+                let submitSeatUrl = "http://ccwso.herokuapp.com/api/submitSeats/";
                 let params = { selectedSeats: this.selectedSeats };
                 let self = this;
                 __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post(submitSeatUrl, params).then(function (res) {
