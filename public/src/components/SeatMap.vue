@@ -14,7 +14,6 @@
 </template>
 
 <script>
-
     import SeatSection from './SeatSection.vue'
     export default {
         name: "SeatMap",
@@ -23,17 +22,9 @@
 </script>
 
 <style scoped>
-
-    #map-container {
+    #map-container, #seat-table{
         width: 100%;
         height: 100%;
-        /*border: 1px solid black;*/
-    }
 
-    #seat-table {
-        height: 100%;
-        width: 100%;
-        /*border: 1px solid red;*/
     }
-
 </style>

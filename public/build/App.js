@@ -16707,7 +16707,6 @@ var ToolTip = function () {
 //
 //
 //
-//
 
 
 
@@ -16738,7 +16737,6 @@ var ToolTip = function () {
 //
 //
 //
-
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -17139,7 +17137,7 @@ module.exports = Cancel;
             let seatAvailable = this.seats_arr[index].available;
             let seatSelected = this.seats_arr[index].selected;
             if (seatAvailable) {
-                if (seatSelected) this.color = '#8EE4AF'; // orange
+                if (seatSelected) this.color = '#8EE4AF'; // light green
                 else return this.color = '#FFFFFF'; // white
             } else return this.color = '#d3d3d3'; //grey
         },
@@ -17421,6 +17419,94 @@ const EventBus = new __WEBPACK_IMPORTED_MODULE_0__vue_js___default.a();
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["a"] = ({
@@ -17440,13 +17526,14 @@ const EventBus = new __WEBPACK_IMPORTED_MODULE_0__vue_js___default.a();
             hasSeats: false,
             success: false,
             total: 0,
-            errors: []
+            errors: [],
+            inlineText: false
         };
     },
     created() {
         if (this.selectedSeats.length > 0) {
             for (let i = 0; i < this.selectedSeats.length; i++) {
-                var currPrice = this.selectedSeats[i].price;
+                let currPrice = this.selectedSeats[i].price;
                 this.total += currPrice;
             }
             this.hasSeats = true;
@@ -17455,8 +17542,8 @@ const EventBus = new __WEBPACK_IMPORTED_MODULE_0__vue_js___default.a();
     mounted() {
         try {
             this.autocomplete = new google.maps.places.Autocomplete(this.$refs.autocomplete, { types: ['address'] });
-            var autoCompleteRef = this.autocomplete;
-            var self = this;
+            let autoCompleteRef = this.autocomplete;
+            let self = this;
             google.maps.event.addListener(this.autocomplete, 'place_changed', function () {
                 var place = autoCompleteRef.getPlace();
                 for (var i = 0; i < place.address_components.length; i++) {
@@ -17486,7 +17573,6 @@ const EventBus = new __WEBPACK_IMPORTED_MODULE_0__vue_js___default.a();
     },
     methods: {
         submitPurchase() {
-            console.log('fisrtname', this.firstname);
             this.errors = [];
             if (this.firstname === '') {
                 this.errors.push('First name is required.');
@@ -17514,10 +17600,10 @@ const EventBus = new __WEBPACK_IMPORTED_MODULE_0__vue_js___default.a();
                 let params = { selectedSeats: this.selectedSeats };
                 let self = this;
                 __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post(submitSeatUrl, params).then(function (res) {
-                    console.log('result', res);
                     self.success = true;
-                    self.hasSeats = false;
+                    self.inlineText = true;
                     document.title = 'Purchase Confirmation Page';
+                    window.scrollTo(0, 0);
                 }).catch(function (error) {
                     console.log('Error submitting seats', error);
                     document.title = 'Error Confirming Purchase';
@@ -23300,7 +23386,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "\n#main-table[data-v-169b0606] {\n    height: 100%;\n    width: 100%;\n}\nhtml[data-v-169b0606], body[data-v-169b0606] {\n    margin:0;\n    padding:0;\n}\n", ""]);
+exports.push([module.i, "\n#main-table[data-v-169b0606] {\n    height: 100%;\n    width: 100%;\n}\n#main-table tr[data-v-169b0606] {\n    height: 100%;\n}\n", ""]);
 
 // exports
 
@@ -23429,7 +23515,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "\n#map-container[data-v-8b097d5e] {\n    width: 100%;\n    height: 100%;\n    /*border: 1px solid black;*/\n}\n#seat-table[data-v-8b097d5e] {\n    height: 100%;\n    width: 100%;\n    /*border: 1px solid red;*/\n}\n\n", ""]);
+exports.push([module.i, "\n#map-container[data-v-8b097d5e], #seat-table[data-v-8b097d5e]{\n    width: 100%;\n    height: 100%;\n}\n", ""]);
 
 // exports
 
@@ -24847,7 +24933,7 @@ exports = module.exports = __webpack_require__(6)(false);
 exports.i(__webpack_require__(28), "");
 
 // module
-exports.push([module.i, "\n#purchase-container[data-v-46812a5e] {\n    height: 100%;\n    width: 100%;\n    border: solid 1px black;\n    border-radius: 20px;\n}\n#purchase-table[data-v-46812a5e] {\n    height: 100%;\n    width: 100%;\n}\n#purchase-table tr[data-v-46812a5e] {\n    width: 100%;\n}\n#purchase-table td[data-v-46812a5e] {\n    width: 100%;\n}\n#selected-seat-table[data-v-46812a5e] {\n   height: 100%;\n   width: 100%;\n}\n#selected-seat-table td[data-v-46812a5e]{\n    width: 33%;\n    height: 6.66%;\n}\n.bottom-top[data-v-46812a5e] {\n    border-top: 1px solid black;\n}\n.button-hidden[data-v-46812a5e] {\n    visibility: hidden;\n}\n\n", ""]);
+exports.push([module.i, "\n#purchase-container[data-v-46812a5e] {\n    height: 100%;\n    width: 100%;\n    border: solid 1px black;\n    border-radius: 20px;\n}\n#purchase-table[data-v-46812a5e] {\n    height: 100%;\n    width: 100%;\n}\n#purchase-table tr[data-v-46812a5e] {\n    width: 100%;\n}\n#purchase-table td[data-v-46812a5e] {\n    width: 100%;\n}\n#selected-seat-table[data-v-46812a5e] {\n   height: 100%;\n   width: 100%;\n}\n#selected-seat-table td[data-v-46812a5e]{\n    width: 33%;\n    height: 6.66%;\n}\n#selected-seat-table tr[data-v-46812a5e]{\n    width: 100%;\n}\n.bottom-top[data-v-46812a5e] {\n    border-top: 1px solid black;\n}\n.button-hidden[data-v-46812a5e] {\n    visibility: hidden;\n}\n\n", ""]);
 
 // exports
 
@@ -24873,7 +24959,6 @@ var render = function() {
               {
                 staticStyle: {
                   height: "80%",
-                  width: "100%",
                   "border-bottom": "1px black solid"
                 }
               },
@@ -24905,7 +24990,7 @@ var render = function() {
               ]
             ),
             _vm._v(" "),
-            _c("tr", { staticStyle: { height: "10%", width: "100%" } }, [
+            _c("tr", { staticStyle: { height: "10%" } }, [
               _c("td", { staticStyle: { "text-align": "center" } }, [
                 _vm._v("Total Seats: " + _vm._s(_vm.totalSeats))
               ]),
@@ -24968,13 +25053,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "tr",
-      {
-        staticStyle: {
-          height: "10%",
-          width: "100%",
-          "border-bottom": "1px black solid"
-        }
-      },
+      { staticStyle: { height: "10%", "border-bottom": "1px black solid" } },
       [
         _c("th", { staticStyle: { "text-align": "center" } }, [_vm._v("Seat")]),
         _vm._v(" "),
@@ -25012,25 +25091,20 @@ var render = function() {
     _c("div", { staticStyle: { height: "500px", width: "100%" } }, [
       _c("table", { attrs: { id: "main-table" } }, [
         _c("tr", [
-          _c("td", { staticStyle: { width: "10%", height: "100%" } }),
+          _c("td", { staticStyle: { width: "10%" } }),
+          _vm._v(" "),
+          _c("td", { staticStyle: { width: "40%" } }, [_c("seat-map")], 1),
+          _vm._v(" "),
+          _c("td", { staticStyle: { width: "10%" } }),
           _vm._v(" "),
           _c(
             "td",
-            { staticStyle: { width: "40%", height: "100%" } },
-            [_c("seat-map")],
-            1
-          ),
-          _vm._v(" "),
-          _c("td", { staticStyle: { width: "10%", height: "100%" } }),
-          _vm._v(" "),
-          _c(
-            "td",
-            { staticStyle: { width: "35%", height: "100%" } },
+            { staticStyle: { width: "35%" } },
             [_c("purchase-section")],
             1
           ),
           _vm._v(" "),
-          _c("td", { staticStyle: { width: "5%", height: "100%" } })
+          _c("td", { staticStyle: { width: "5%" } })
         ])
       ])
     ]),
@@ -25140,7 +25214,7 @@ exports = module.exports = __webpack_require__(6)(false);
 exports.i(__webpack_require__(28), "");
 
 // module
-exports.push([module.i, "\n#contact-btn-collapse[data-v-7b69f3ce] {\n}\n#purchase-form[data-v-7b69f3ce] {\n    border: 1px solid black;\n    border-radius: 50px;\n    padding-left: 5%;\n}\n#form-table[data-v-7b69f3ce] {\n    height: 100%;\n    width: 100%;\n}\n#form-table tr[data-v-7b69f3ce] {\n    width: 100%;\n}\n#contact-table[data-v-7b69f3ce] {\n    height: 100%;\n    width: 100%;\n}\n.group[data-v-7b69f3ce] {\n    position: relative;\n    margin: 40px 0;\n}\ntextarea[data-v-7b69f3ce] {\n    resize: none;\n}\ninput[data-v-7b69f3ce], textarea[data-v-7b69f3ce]{\n    background: none;\n    color: black;\n    font-size: 18px;\n    padding: 10px 10px 10px 5px;\n    display: block;\n    width: 50%;\n    border: none;\n    border-radius: 0;\n    border-bottom: 1px solid #c6c6c6;\n}\ninput[data-v-7b69f3ce], textarea[data-v-7b69f3ce]:focus {\n     outline: none;\n}\ninput:focus ~ label[data-v-7b69f3ce], input:valid ~ label[data-v-7b69f3ce],\ntextarea:focus ~ label[data-v-7b69f3ce],\ntextarea:valid ~ label[data-v-7b69f3ce] {\n    top: -14px;\n    font-size: 12px;\n    color: black;\n}\nlabel[data-v-7b69f3ce] {\n    color: #c6c6c6;\n    font-size: 16px;\n    font-weight: normal;\n    position: absolute;\n    pointer-events: none;\n    left: 5px;\n    top: 10px;\n    transition: 300ms ease all;\n}\n.bar[data-v-7b69f3ce] {\n    position: relative;\n    display: block;\n    width: 320px;\n}\n.bar[data-v-7b69f3ce]:before {\n    content: '';\n    height: 2px;\n    width: 0;\n    bottom: 0px;\n    position: absolute;\n    background: #2196F3;\n    transition: 300ms ease all;\n    left: 0%;\n}\nsvg[data-v-7b69f3ce] {\n    width: 100px;\n    display: block;\n    margin: 40px auto 0;\n}\n.path[data-v-7b69f3ce] {\n    stroke-dasharray: 1000;\n    stroke-dashoffset: 0;\n}\n.path.circle[data-v-7b69f3ce] {\n    -webkit-animation: dash-data-v-7b69f3ce 0.9s ease-in-out;\n    animation: dash-data-v-7b69f3ce 0.9s ease-in-out;\n}\n.path.line[data-v-7b69f3ce] {\n    stroke-dashoffset: 1000;\n    -webkit-animation: dash-data-v-7b69f3ce 0.9s 0.35s ease-in-out forwards;\n    animation: dash-data-v-7b69f3ce 0.9s 0.35s ease-in-out forwards;\n}\n.path.check[data-v-7b69f3ce] {\n    stroke-dashoffset: -100;\n    -webkit-animation: dash-check-data-v-7b69f3ce 0.9s 0.35s ease-in-out forwards;\n    animation: dash-check-data-v-7b69f3ce 0.9s 0.35s ease-in-out forwards;\n}\np[data-v-7b69f3ce] {\n    text-align: center;\n    margin: 20px 0 60px;\n    font-size: 1.25em;\n}\np.success[data-v-7b69f3ce] {\n    color: #73AF55;\n}\np.error[data-v-7b69f3ce] {\n    color: #D06079;\n}\n@-webkit-keyframes dash-data-v-7b69f3ce {\n0% {\n        stroke-dashoffset: 1000;\n}\n100% {\n        stroke-dashoffset: 0;\n}\n}\n@keyframes dash-data-v-7b69f3ce {\n0% {\n        stroke-dashoffset: 1000;\n}\n100% {\n        stroke-dashoffset: 0;\n}\n}\n@-webkit-keyframes dash-check-data-v-7b69f3ce {\n0% {\n        stroke-dashoffset: -100;\n}\n100% {\n        stroke-dashoffset: 900;\n}\n}\n@keyframes dash-check-data-v-7b69f3ce {\n0% {\n        stroke-dashoffset: -100;\n}\n100% {\n        stroke-dashoffset: 900;\n}\n}\n\n\n", ""]);
+exports.push([module.i, "\n.purchase-form[data-v-7b69f3ce] {\n    border: 1px solid black;\n    border-radius: 50px;\n    padding-left: 5%;\n}\n.form-table[data-v-7b69f3ce] {\n    height: 100%;\n    width: 100%;\n}\n.form-table tr[data-v-7b69f3ce] {\n    width: 100%;\n}\n.contact-table[data-v-7b69f3ce] {\n    height: 100%;\n    width: 100%;\n}\n.purchase-detail-table[data-v-7b69f3ce] {\n    width: 50%;\n}\n.group[data-v-7b69f3ce] {\n    position: relative;\n    margin: 40px 0;\n}\n.display-inline[data-v-7b69f3ce] {\n    display: inline;\n}\n.button-hidden[data-v-7b69f3ce] {\n    visibility: hidden;\n}\ntextarea[data-v-7b69f3ce] {\n    resize: none;\n}\ninput[data-v-7b69f3ce], textarea[data-v-7b69f3ce]{\n    background: none;\n    color: black;\n    font-size: 18px;\n    padding: 10px 10px 10px 5px;\n    display: block;\n    width: 50%;\n    border: none;\n    border-radius: 0;\n    border-bottom: 1px solid #c6c6c6;\n}\ninput[data-v-7b69f3ce], textarea[data-v-7b69f3ce]:focus {\n     outline: none;\n}\ninput:focus ~ label[data-v-7b69f3ce], input:valid ~ label[data-v-7b69f3ce],\ntextarea:focus ~ label[data-v-7b69f3ce],\ntextarea:valid ~ label[data-v-7b69f3ce] {\n    top: -14px;\n    font-size: 12px;\n    color: black;\n}\nlabel[data-v-7b69f3ce] {\n    color: #c6c6c6;\n    font-size: 16px;\n    font-weight: normal;\n    position: absolute;\n    pointer-events: none;\n    left: 5px;\n    top: 10px;\n    transition: 300ms ease all;\n}\n.bar[data-v-7b69f3ce] {\n    position: relative;\n    display: block;\n    width: 320px;\n}\n.bar[data-v-7b69f3ce]:before {\n    content: '';\n    height: 2px;\n    width: 0;\n    bottom: 0px;\n    position: absolute;\n    background: #2196F3;\n    transition: 300ms ease all;\n    left: 0%;\n}\nsvg[data-v-7b69f3ce] {\n    width: 100px;\n    display: block;\n    margin: 40px auto 0;\n}\n.path[data-v-7b69f3ce] {\n    stroke-dasharray: 1000;\n    stroke-dashoffset: 0;\n}\n.path.circle[data-v-7b69f3ce] {\n    -webkit-animation: dash-data-v-7b69f3ce 0.9s ease-in-out;\n    animation: dash-data-v-7b69f3ce 0.9s ease-in-out;\n}\n.path.line[data-v-7b69f3ce] {\n    stroke-dashoffset: 1000;\n    -webkit-animation: dash-data-v-7b69f3ce 0.9s 0.35s ease-in-out forwards;\n    animation: dash-data-v-7b69f3ce 0.9s 0.35s ease-in-out forwards;\n}\n.path.check[data-v-7b69f3ce] {\n    stroke-dashoffset: -100;\n    -webkit-animation: dash-check-data-v-7b69f3ce 0.9s 0.35s ease-in-out forwards;\n    animation: dash-check-data-v-7b69f3ce 0.9s 0.35s ease-in-out forwards;\n}\np[data-v-7b69f3ce] {\n    text-align: center;\n    margin: 20px 0 60px;\n    font-size: 1.25em;\n}\np.success[data-v-7b69f3ce] {\n    color: #73AF55;\n}\np.error[data-v-7b69f3ce] {\n    color: #D06079;\n}\n@-webkit-keyframes dash-data-v-7b69f3ce {\n0% {\n        stroke-dashoffset: 1000;\n}\n100% {\n        stroke-dashoffset: 0;\n}\n}\n@keyframes dash-data-v-7b69f3ce {\n0% {\n        stroke-dashoffset: 1000;\n}\n100% {\n        stroke-dashoffset: 0;\n}\n}\n@-webkit-keyframes dash-check-data-v-7b69f3ce {\n0% {\n        stroke-dashoffset: -100;\n}\n100% {\n        stroke-dashoffset: 900;\n}\n}\n@keyframes dash-check-data-v-7b69f3ce {\n0% {\n        stroke-dashoffset: -100;\n}\n100% {\n        stroke-dashoffset: 900;\n}\n}\n\n", ""]);
 
 // exports
 
@@ -25159,640 +25233,1054 @@ var render = function() {
         "div",
         { staticStyle: { "padding-left": "20%", "padding-right": "20%" } },
         [
-          _c("b-form", { attrs: { id: "purchase-form" } }, [
-            _c(
-              "table",
-              { attrs: { id: "form-table" } },
-              [
-                _vm.errors.length > 0
-                  ? [
-                      _c("p", [
-                        _vm._v(
-                          "Please fill out the mandatory fields before purchasing!"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "ul",
-                        _vm._l(_vm.errors, function(error) {
-                          return _c("li", [
-                            _vm._v(
-                              "\n                    " +
-                                _vm._s(error) +
-                                "\n                "
-                            )
-                          ])
-                        })
-                      )
-                    ]
-                  : _vm._e(),
+          _vm.success
+            ? _c("div", [
+                _c(
+                  "svg",
+                  {
+                    attrs: {
+                      version: "1.1",
+                      xmlns: "http://www.w3.org/2000/svg",
+                      viewBox: "0 0 130.2 130.2"
+                    }
+                  },
+                  [
+                    _c("circle", {
+                      staticClass: "path circle",
+                      attrs: {
+                        fill: "none",
+                        stroke: "#73AF55",
+                        "stroke-width": "6",
+                        "stroke-miterlimit": "10",
+                        cx: "65.1",
+                        cy: "65.1",
+                        r: "62.1"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("polyline", {
+                      staticClass: "path check",
+                      attrs: {
+                        fill: "none",
+                        stroke: "#73AF55",
+                        "stroke-width": "6",
+                        "stroke-linecap": "round",
+                        "stroke-miterlimit": "10",
+                        points: "100.2,40.2 51.5,88.8 29.8,67.5 "
+                      }
+                    })
+                  ]
+                ),
                 _vm._v(" "),
-                _c("tr", [
-                  _c(
-                    "td",
-                    [
-                      _c(
-                        "b-btn",
-                        {
-                          directives: [
-                            {
-                              name: "b-toggle",
-                              rawName: "v-b-toggle.contact-collapse",
-                              modifiers: { "contact-collapse": true }
-                            }
-                          ],
-                          class: { "hvr-shrink": true },
-                          attrs: { id: "contact-btn-collapse" }
-                        },
-                        [_vm._v("Contact Information")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-collapse",
-                        { attrs: { visible: "", id: "contact-collapse" } },
-                        [
-                          _c("table", { attrs: { id: "contact-table" } }, [
-                            _c("tr", [_c("td", [_vm._v(" ")])]),
-                            _vm._v(" "),
-                            _c("tr", [
-                              _c("td", [
-                                _c("table", [
-                                  _c("tr", { staticStyle: { width: "100%" } }, [
-                                    _c(
-                                      "td",
-                                      { staticStyle: { width: "50%" } },
-                                      [
-                                        _c("div", { staticClass: "group" }, [
-                                          _c("input", {
-                                            directives: [
-                                              {
-                                                name: "model",
-                                                rawName: "v-model",
-                                                value: _vm.firstname,
-                                                expression: "firstname"
-                                              }
-                                            ],
-                                            attrs: {
-                                              id: "first-name",
-                                              type: "text",
-                                              required: ""
-                                            },
-                                            domProps: { value: _vm.firstname },
-                                            on: {
-                                              input: function($event) {
-                                                if ($event.target.composing) {
-                                                  return
-                                                }
-                                                _vm.firstname =
-                                                  $event.target.value
-                                              }
-                                            }
-                                          }),
-                                          _vm._v(" "),
-                                          _c("span", {
-                                            staticClass: "highlight"
-                                          }),
-                                          _c("span", { staticClass: "bar" }),
-                                          _vm._v(" "),
-                                          _c("label", [_vm._v("First Name")])
-                                        ])
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "td",
-                                      { staticStyle: { width: "50%" } },
-                                      [
-                                        _c("div", { staticClass: "group" }, [
-                                          _c("input", {
-                                            directives: [
-                                              {
-                                                name: "model",
-                                                rawName: "v-model",
-                                                value: _vm.lastname,
-                                                expression: "lastname"
-                                              }
-                                            ],
-                                            attrs: {
-                                              id: "last-name",
-                                              type: "text",
-                                              required: ""
-                                            },
-                                            domProps: { value: _vm.lastname },
-                                            on: {
-                                              input: function($event) {
-                                                if ($event.target.composing) {
-                                                  return
-                                                }
-                                                _vm.lastname =
-                                                  $event.target.value
-                                              }
-                                            }
-                                          }),
-                                          _vm._v(" "),
-                                          _c("span", {
-                                            staticClass: "highlight"
-                                          }),
-                                          _c("span", { staticClass: "bar" }),
-                                          _vm._v(" "),
-                                          _c("label", [_vm._v("Last Name")])
-                                        ])
-                                      ]
-                                    )
-                                  ])
-                                ])
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("tr", [
-                              _c("td", [
-                                _c("table", [
-                                  _c("tr", [
-                                    _c("td", [
-                                      _c("div", { staticClass: "group" }, [
-                                        _c("input", {
-                                          directives: [
-                                            {
-                                              name: "model",
-                                              rawName: "v-model",
-                                              value: _vm.street,
-                                              expression: "street"
-                                            }
-                                          ],
-                                          ref: "autocomplete",
-                                          staticStyle: { width: "80%" },
-                                          attrs: {
-                                            type: "text",
-                                            required: "",
-                                            placeholder: ""
-                                          },
-                                          domProps: { value: _vm.street },
-                                          on: {
-                                            input: function($event) {
-                                              if ($event.target.composing) {
-                                                return
-                                              }
-                                              _vm.street = $event.target.value
-                                            }
-                                          }
-                                        }),
-                                        _vm._v(" "),
-                                        _c("span", {
-                                          staticClass: "highlight"
-                                        }),
-                                        _c("span", { staticClass: "bar" }),
-                                        _vm._v(" "),
-                                        _c("label", [_vm._v("Street Address")])
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("td", [
-                                      _c("div", { staticClass: "group" }, [
-                                        _c("input", {
-                                          directives: [
-                                            {
-                                              name: "model",
-                                              rawName: "v-model",
-                                              value: _vm.street2,
-                                              expression: "street2"
-                                            }
-                                          ],
-                                          staticStyle: { width: "30%" },
-                                          attrs: {
-                                            id: "address-2",
-                                            type: "text",
-                                            required: ""
-                                          },
-                                          domProps: { value: _vm.street2 },
-                                          on: {
-                                            input: function($event) {
-                                              if ($event.target.composing) {
-                                                return
-                                              }
-                                              _vm.street2 = $event.target.value
-                                            }
-                                          }
-                                        }),
-                                        _vm._v(" "),
-                                        _c("span", {
-                                          staticClass: "highlight"
-                                        }),
-                                        _c("span", { staticClass: "bar" }),
-                                        _vm._v(" "),
-                                        _c("label", [
-                                          _vm._v("Apt/Unit (Optional)")
-                                        ])
-                                      ])
-                                    ])
-                                  ])
-                                ])
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("tr", [
-                              _c("td", [
-                                _c("table", [
-                                  _c("tr", [
-                                    _c("td", [
-                                      _c("div", { staticClass: "group" }, [
-                                        _c("input", {
-                                          directives: [
-                                            {
-                                              name: "model",
-                                              rawName: "v-model",
-                                              value: _vm.city,
-                                              expression: "city"
-                                            }
-                                          ],
-                                          staticStyle: { width: "60%" },
-                                          attrs: {
-                                            id: "city",
-                                            type: "text",
-                                            required: ""
-                                          },
-                                          domProps: { value: _vm.city },
-                                          on: {
-                                            input: function($event) {
-                                              if ($event.target.composing) {
-                                                return
-                                              }
-                                              _vm.city = $event.target.value
-                                            }
-                                          }
-                                        }),
-                                        _vm._v(" "),
-                                        _c("span", {
-                                          staticClass: "highlight"
-                                        }),
-                                        _c("span", { staticClass: "bar" }),
-                                        _vm._v(" "),
-                                        _c("label", [_vm._v("City")])
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "td",
-                                      { staticStyle: { width: "20%" } },
-                                      [
-                                        _c("div", { staticClass: "group" }, [
-                                          _c("input", {
-                                            directives: [
-                                              {
-                                                name: "model",
-                                                rawName: "v-model",
-                                                value: _vm.state,
-                                                expression: "state"
-                                              }
-                                            ],
-                                            staticStyle: { width: "25%" },
-                                            attrs: {
-                                              id: "state",
-                                              type: "text",
-                                              required: ""
-                                            },
-                                            domProps: { value: _vm.state },
-                                            on: {
-                                              input: function($event) {
-                                                if ($event.target.composing) {
-                                                  return
-                                                }
-                                                _vm.state = $event.target.value
-                                              }
-                                            }
-                                          }),
-                                          _vm._v(" "),
-                                          _c("span", {
-                                            staticClass: "highlight"
-                                          }),
-                                          _c("span", { staticClass: "bar" }),
-                                          _vm._v(" "),
-                                          _c("label", [_vm._v("State")])
-                                        ])
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("td", [
-                                      _c("div", { staticClass: "group" }, [
-                                        _c("input", {
-                                          directives: [
-                                            {
-                                              name: "model",
-                                              rawName: "v-model",
-                                              value: _vm.zip,
-                                              expression: "zip"
-                                            }
-                                          ],
-                                          staticStyle: { width: "50%" },
-                                          attrs: {
-                                            id: "zip",
-                                            type: "text",
-                                            required: ""
-                                          },
-                                          domProps: { value: _vm.zip },
-                                          on: {
-                                            input: function($event) {
-                                              if ($event.target.composing) {
-                                                return
-                                              }
-                                              _vm.zip = $event.target.value
-                                            }
-                                          }
-                                        }),
-                                        _vm._v(" "),
-                                        _c("span", {
-                                          staticClass: "highlight"
-                                        }),
-                                        _c("span", { staticClass: "bar" }),
-                                        _vm._v(" "),
-                                        _c("label", [_vm._v("Zip Code")])
-                                      ])
-                                    ])
-                                  ])
-                                ])
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("tr", [
-                              _c("td", [
-                                _c("table", [
-                                  _c("tr", [
-                                    _c("td", [
-                                      _c("div", { staticClass: "group" }, [
-                                        _c("input", {
-                                          directives: [
-                                            {
-                                              name: "model",
-                                              rawName: "v-model",
-                                              value: _vm.phone,
-                                              expression: "phone"
-                                            }
-                                          ],
-                                          attrs: {
-                                            id: "phone",
-                                            type: "tel",
-                                            required: ""
-                                          },
-                                          domProps: { value: _vm.phone },
-                                          on: {
-                                            input: function($event) {
-                                              if ($event.target.composing) {
-                                                return
-                                              }
-                                              _vm.phone = $event.target.value
-                                            }
-                                          }
-                                        }),
-                                        _vm._v(" "),
-                                        _c("span", {
-                                          staticClass: "highlight"
-                                        }),
-                                        _c("span", { staticClass: "bar" }),
-                                        _vm._v(" "),
-                                        _c("label", [_vm._v("Phone Number")])
-                                      ])
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("td", [
-                                      _c("div", { staticClass: "group" }, [
-                                        _c("input", {
-                                          directives: [
-                                            {
-                                              name: "model",
-                                              rawName: "v-model",
-                                              value: _vm.email,
-                                              expression: "email"
-                                            }
-                                          ],
-                                          attrs: {
-                                            id: "email",
-                                            type: "email",
-                                            required: ""
-                                          },
-                                          domProps: { value: _vm.email },
-                                          on: {
-                                            input: function($event) {
-                                              if ($event.target.composing) {
-                                                return
-                                              }
-                                              _vm.email = $event.target.value
-                                            }
-                                          }
-                                        }),
-                                        _vm._v(" "),
-                                        _c("span", {
-                                          staticClass: "highlight"
-                                        }),
-                                        _c("span", { staticClass: "bar" }),
-                                        _vm._v(" "),
-                                        _c("label", [
-                                          _vm._v("Email (Optional)")
-                                        ])
-                                      ])
-                                    ])
-                                  ])
-                                ])
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("tr", [_c("td", [_vm._v(" ")])])
-                          ])
-                        ]
-                      )
-                    ],
-                    1
-                  )
+                _c("p", { staticClass: "success" }, [
+                  _vm._v("Purchase Confirmed!")
                 ]),
                 _vm._v(" "),
-                _c("tr", [
-                  _c(
-                    "td",
-                    [
-                      _c(
-                        "b-btn",
-                        {
-                          directives: [
-                            {
-                              name: "b-toggle",
-                              rawName: "v-b-toggle.purchase-collapse",
-                              modifiers: { "purchase-collapse": true }
-                            }
-                          ],
-                          class: { "hvr-shrink": true },
-                          attrs: { id: "purchase-btn-collapse" }
-                        },
-                        [_vm._v("Purchase Details")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "b-collapse",
-                        { attrs: { visible: "", id: "purchase-collapse" } },
-                        [
-                          _c(
-                            "table",
-                            [
-                              _c("tr", [_c("td", [_vm._v(" ")])]),
-                              _vm._v(" "),
-                              _vm._l(_vm.selectedSeats, function(seat) {
-                                return _c("tr", [
-                                  _c("td", [
-                                    _vm._v("Seat: " + _vm._s(seat.label))
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("td", [
-                                    _vm._v("Price: $" + _vm._s(seat.price))
-                                  ])
-                                ])
-                              }),
-                              _vm._v(" "),
+                _c("table", { staticClass: "form-table" }, [
+                  _c("tr", [
+                    _c(
+                      "td",
+                      [
+                        _c(
+                          "b-btn",
+                          {
+                            directives: [
+                              {
+                                name: "b-toggle",
+                                rawName: "v-b-toggle.contact-collapse",
+                                modifiers: { "contact-collapse": true }
+                              }
+                            ],
+                            class: { "hvr-shrink": true },
+                            attrs: { id: "contact-btn-collapse" }
+                          },
+                          [_vm._v("Contact Summary")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "b-collapse",
+                          { attrs: { visible: "", id: "contact-collapse" } },
+                          [
+                            _c("table", { staticClass: "contact-table" }, [
                               _c("tr", [_c("td", [_vm._v(" ")])]),
                               _vm._v(" "),
                               _c("tr", [
-                                _c("td"),
                                 _c("td", [
-                                  _vm._v("Total: $" + _vm._s(_vm.total))
+                                  _c("table", [
+                                    _c("tr", [
+                                      _c(
+                                        "td",
+                                        { staticStyle: { width: "40%" } },
+                                        [
+                                          _c("span", [
+                                            _c("strong", [
+                                              _vm._v("First Name:")
+                                            ]),
+                                            _vm._v(" " + _vm._s(_vm.firstname))
+                                          ])
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("td", {
+                                        staticStyle: { width: "10%" }
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "td",
+                                        { staticStyle: { width: "50%" } },
+                                        [
+                                          _c("span", [
+                                            _c("strong", [
+                                              _vm._v("Last Name:")
+                                            ]),
+                                            _vm._v(" " + _vm._s(_vm.lastname))
+                                          ])
+                                        ]
+                                      )
+                                    ])
+                                  ])
                                 ])
                               ]),
                               _vm._v(" "),
                               _c("tr", [
-                                _c(
-                                  "td",
-                                  [
+                                _c("td", [
+                                  _c("table", [
+                                    _c("tr", [
+                                      _c(
+                                        "td",
+                                        { staticStyle: { width: "70%" } },
+                                        [
+                                          _c("span", [
+                                            _c("strong", [
+                                              _vm._v("Street Name:")
+                                            ]),
+                                            _vm._v(" " + _vm._s(_vm.street))
+                                          ])
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("td", {
+                                        staticStyle: { width: "10%" }
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "td",
+                                        { staticStyle: { width: "20%" } },
+                                        [
+                                          _c("span", [
+                                            _c("strong", [_vm._v("Apt/Unit:")]),
+                                            _vm._v(" " + _vm._s(_vm.street2))
+                                          ])
+                                        ]
+                                      )
+                                    ])
+                                  ])
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("tr", [
+                                _c("td", [
+                                  _c("table", [
+                                    _c("tr", [
+                                      _c(
+                                        "td",
+                                        { staticStyle: { width: "20%" } },
+                                        [
+                                          _c("span", [
+                                            _c("strong", [_vm._v("City:")]),
+                                            _vm._v(" " + _vm._s(_vm.city))
+                                          ])
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("td", {
+                                        staticStyle: { width: "5%" }
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "td",
+                                        { staticStyle: { width: "20%" } },
+                                        [
+                                          _c("span", [
+                                            _c("strong", [_vm._v("State:")]),
+                                            _vm._v(" " + _vm._s(_vm.state))
+                                          ])
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("td", {
+                                        staticStyle: { width: "5%" }
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "td",
+                                        { staticStyle: { width: "20%" } },
+                                        [
+                                          _c("span", [
+                                            _c("strong", [_vm._v("Zip Code:")]),
+                                            _vm._v(" " + _vm._s(_vm.zip))
+                                          ])
+                                        ]
+                                      )
+                                    ])
+                                  ])
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("tr", [
+                                _c("td", [
+                                  _c("table", [
+                                    _c("tr", [
+                                      _c(
+                                        "td",
+                                        { staticStyle: { width: "40%" } },
+                                        [
+                                          _c("span", [
+                                            _c("strong", [
+                                              _vm._v("Phone Number:")
+                                            ]),
+                                            _vm._v(" " + _vm._s(_vm.phone))
+                                          ])
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("td", {
+                                        staticStyle: { width: "10%" }
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "td",
+                                        { staticStyle: { width: "50%" } },
+                                        [
+                                          _c("span", [
+                                            _c("strong", [_vm._v("Email:")]),
+                                            _vm._v(" " + _vm._s(_vm.email))
+                                          ])
+                                        ]
+                                      )
+                                    ])
+                                  ])
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("tr", [_c("td", [_vm._v(" ")])])
+                            ])
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("tr", [
+                    _c(
+                      "td",
+                      [
+                        _c(
+                          "b-btn",
+                          {
+                            directives: [
+                              {
+                                name: "b-toggle",
+                                rawName: "v-b-toggle.purchase-collapse",
+                                modifiers: { "purchase-collapse": true }
+                              }
+                            ],
+                            class: { "hvr-shrink": true },
+                            attrs: { id: "purchase-btn-collapse" }
+                          },
+                          [_vm._v("Purchase Summary")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "b-collapse",
+                          { attrs: { visible: "", id: "purchase-collapse" } },
+                          [
+                            _c(
+                              "table",
+                              { staticClass: "purchase-detail-table" },
+                              [
+                                _c("tr", [_c("td", [_vm._v(" ")])]),
+                                _vm._v(" "),
+                                _vm._l(_vm.selectedSeats, function(seat) {
+                                  return _c("tr", [
                                     _c(
-                                      "b-button",
+                                      "td",
                                       {
-                                        class: { "hvr-shrink": true },
-                                        attrs: { type: "button" },
-                                        on: {
-                                          click: function($event) {
-                                            _vm.submitPurchase()
-                                          }
+                                        staticStyle: {
+                                          width: "20%",
+                                          "text-align": "center"
                                         }
                                       },
-                                      [_vm._v("Confirm Purchase")]
+                                      [_vm._v("Seat: " + _vm._s(seat.label))]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "td",
+                                      {
+                                        staticStyle: {
+                                          width: "60%",
+                                          "text-align": "center"
+                                        }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "Section: " +
+                                            _vm._s(seat.section.label)
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "td",
+                                      {
+                                        staticStyle: {
+                                          width: "20%",
+                                          "text-align": "center"
+                                        }
+                                      },
+                                      [_vm._v("Price: $" + _vm._s(seat.price))]
                                     )
-                                  ],
-                                  1
-                                )
-                              ])
-                            ],
-                            2
-                          )
-                        ]
-                      )
-                    ],
-                    1
-                  )
+                                  ])
+                                }),
+                                _vm._v(" "),
+                                _c("tr", [_c("td", [_vm._v(" ")])]),
+                                _vm._v(" "),
+                                _c("tr", [
+                                  _c("td"),
+                                  _c("td"),
+                                  _c("td", [
+                                    _vm._v("Total: $" + _vm._s(_vm.total))
+                                  ])
+                                ])
+                              ],
+                              2
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ])
                 ])
-              ],
-              2
-            )
-          ])
-        ],
-        1
+              ])
+            : _c(
+                "div",
+                [
+                  _c("b-form", { staticClass: "purchase-form" }, [
+                    _c(
+                      "table",
+                      { staticClass: "form-table" },
+                      [
+                        _vm.errors.length > 0
+                          ? [
+                              _c("p", [
+                                _vm._v(
+                                  "Please fill out the mandatory fields before purchasing!"
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "ul",
+                                _vm._l(_vm.errors, function(error) {
+                                  return _c("li", [
+                                    _vm._v(
+                                      "\n                            " +
+                                        _vm._s(error) +
+                                        "\n                        "
+                                    )
+                                  ])
+                                })
+                              )
+                            ]
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _c(
+                            "td",
+                            [
+                              _c(
+                                "b-btn",
+                                {
+                                  directives: [
+                                    {
+                                      name: "b-toggle",
+                                      rawName: "v-b-toggle.contact-collapse",
+                                      modifiers: { "contact-collapse": true }
+                                    }
+                                  ],
+                                  class: { "hvr-shrink": true },
+                                  attrs: { id: "contact-btn-collapse" }
+                                },
+                                [_vm._v("Contact Information")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "b-collapse",
+                                {
+                                  attrs: { visible: "", id: "contact-collapse" }
+                                },
+                                [
+                                  _c(
+                                    "table",
+                                    { staticClass: "contact-table" },
+                                    [
+                                      _c("tr", [_c("td", [_vm._v(" ")])]),
+                                      _vm._v(" "),
+                                      _c("tr", [
+                                        _c("td", [
+                                          _c("table", [
+                                            _c("tr", [
+                                              _c("td", [
+                                                _c(
+                                                  "div",
+                                                  { staticClass: "group" },
+                                                  [
+                                                    _c("input", {
+                                                      directives: [
+                                                        {
+                                                          name: "model",
+                                                          rawName: "v-model",
+                                                          value: _vm.firstname,
+                                                          expression:
+                                                            "firstname"
+                                                        }
+                                                      ],
+                                                      staticStyle: {
+                                                        width: "50%"
+                                                      },
+                                                      attrs: {
+                                                        id: "first-name",
+                                                        type: "text",
+                                                        required: ""
+                                                      },
+                                                      domProps: {
+                                                        value: _vm.firstname
+                                                      },
+                                                      on: {
+                                                        input: function(
+                                                          $event
+                                                        ) {
+                                                          if (
+                                                            $event.target
+                                                              .composing
+                                                          ) {
+                                                            return
+                                                          }
+                                                          _vm.firstname =
+                                                            $event.target.value
+                                                        }
+                                                      }
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c("span", {
+                                                      staticClass: "highlight"
+                                                    }),
+                                                    _c("span", {
+                                                      staticClass: "bar"
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c("label", [
+                                                      _vm._v("First Name")
+                                                    ])
+                                                  ]
+                                                )
+                                              ]),
+                                              _vm._v(" "),
+                                              _c("td", [
+                                                _c(
+                                                  "div",
+                                                  { staticClass: "group" },
+                                                  [
+                                                    _c("input", {
+                                                      directives: [
+                                                        {
+                                                          name: "model",
+                                                          rawName: "v-model",
+                                                          value: _vm.lastname,
+                                                          expression: "lastname"
+                                                        }
+                                                      ],
+                                                      staticStyle: {
+                                                        width: "50%"
+                                                      },
+                                                      attrs: {
+                                                        id: "last-name",
+                                                        type: "text",
+                                                        required: ""
+                                                      },
+                                                      domProps: {
+                                                        value: _vm.lastname
+                                                      },
+                                                      on: {
+                                                        input: function(
+                                                          $event
+                                                        ) {
+                                                          if (
+                                                            $event.target
+                                                              .composing
+                                                          ) {
+                                                            return
+                                                          }
+                                                          _vm.lastname =
+                                                            $event.target.value
+                                                        }
+                                                      }
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c("span", {
+                                                      staticClass: "highlight"
+                                                    }),
+                                                    _c("span", {
+                                                      staticClass: "bar"
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c("label", [
+                                                      _vm._v("Last Name")
+                                                    ])
+                                                  ]
+                                                )
+                                              ])
+                                            ])
+                                          ])
+                                        ])
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("tr", [
+                                        _c("td", [
+                                          _c("table", [
+                                            _c("tr", [
+                                              _c("td", [
+                                                _c(
+                                                  "div",
+                                                  { staticClass: "group" },
+                                                  [
+                                                    _c("input", {
+                                                      directives: [
+                                                        {
+                                                          name: "model",
+                                                          rawName: "v-model",
+                                                          value: _vm.street,
+                                                          expression: "street"
+                                                        }
+                                                      ],
+                                                      ref: "autocomplete",
+                                                      staticStyle: {
+                                                        width: "80%"
+                                                      },
+                                                      attrs: {
+                                                        type: "text",
+                                                        required: "",
+                                                        placeholder: ""
+                                                      },
+                                                      domProps: {
+                                                        value: _vm.street
+                                                      },
+                                                      on: {
+                                                        input: function(
+                                                          $event
+                                                        ) {
+                                                          if (
+                                                            $event.target
+                                                              .composing
+                                                          ) {
+                                                            return
+                                                          }
+                                                          _vm.street =
+                                                            $event.target.value
+                                                        }
+                                                      }
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c("span", {
+                                                      staticClass: "highlight"
+                                                    }),
+                                                    _c("span", {
+                                                      staticClass: "bar"
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c("label", [
+                                                      _vm._v("Street Address")
+                                                    ])
+                                                  ]
+                                                )
+                                              ]),
+                                              _vm._v(" "),
+                                              _c("td", [
+                                                _c(
+                                                  "div",
+                                                  { staticClass: "group" },
+                                                  [
+                                                    _c("input", {
+                                                      directives: [
+                                                        {
+                                                          name: "model",
+                                                          rawName: "v-model",
+                                                          value: _vm.street2,
+                                                          expression: "street2"
+                                                        }
+                                                      ],
+                                                      staticStyle: {
+                                                        width: "30%"
+                                                      },
+                                                      attrs: {
+                                                        id: "address-2",
+                                                        type: "text",
+                                                        required: ""
+                                                      },
+                                                      domProps: {
+                                                        value: _vm.street2
+                                                      },
+                                                      on: {
+                                                        input: function(
+                                                          $event
+                                                        ) {
+                                                          if (
+                                                            $event.target
+                                                              .composing
+                                                          ) {
+                                                            return
+                                                          }
+                                                          _vm.street2 =
+                                                            $event.target.value
+                                                        }
+                                                      }
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c("span", {
+                                                      staticClass: "highlight"
+                                                    }),
+                                                    _c("span", {
+                                                      staticClass: "bar"
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c("label", [
+                                                      _vm._v(
+                                                        "Apt/Unit (Optional)"
+                                                      )
+                                                    ])
+                                                  ]
+                                                )
+                                              ])
+                                            ])
+                                          ])
+                                        ])
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("tr", [
+                                        _c("td", [
+                                          _c("table", [
+                                            _c("tr", [
+                                              _c("td", [
+                                                _c(
+                                                  "div",
+                                                  { staticClass: "group" },
+                                                  [
+                                                    _c("input", {
+                                                      directives: [
+                                                        {
+                                                          name: "model",
+                                                          rawName: "v-model",
+                                                          value: _vm.city,
+                                                          expression: "city"
+                                                        }
+                                                      ],
+                                                      staticStyle: {
+                                                        width: "60%"
+                                                      },
+                                                      attrs: {
+                                                        id: "city",
+                                                        type: "text",
+                                                        required: ""
+                                                      },
+                                                      domProps: {
+                                                        value: _vm.city
+                                                      },
+                                                      on: {
+                                                        input: function(
+                                                          $event
+                                                        ) {
+                                                          if (
+                                                            $event.target
+                                                              .composing
+                                                          ) {
+                                                            return
+                                                          }
+                                                          _vm.city =
+                                                            $event.target.value
+                                                        }
+                                                      }
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c("span", {
+                                                      staticClass: "highlight"
+                                                    }),
+                                                    _c("span", {
+                                                      staticClass: "bar"
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c("label", [
+                                                      _vm._v("City")
+                                                    ])
+                                                  ]
+                                                )
+                                              ]),
+                                              _vm._v(" "),
+                                              _c(
+                                                "td",
+                                                {
+                                                  staticStyle: { width: "20%" }
+                                                },
+                                                [
+                                                  _c(
+                                                    "div",
+                                                    { staticClass: "group" },
+                                                    [
+                                                      _c("input", {
+                                                        directives: [
+                                                          {
+                                                            name: "model",
+                                                            rawName: "v-model",
+                                                            value: _vm.state,
+                                                            expression: "state"
+                                                          }
+                                                        ],
+                                                        staticStyle: {
+                                                          width: "25%"
+                                                        },
+                                                        attrs: {
+                                                          id: "state",
+                                                          type: "text",
+                                                          required: ""
+                                                        },
+                                                        domProps: {
+                                                          value: _vm.state
+                                                        },
+                                                        on: {
+                                                          input: function(
+                                                            $event
+                                                          ) {
+                                                            if (
+                                                              $event.target
+                                                                .composing
+                                                            ) {
+                                                              return
+                                                            }
+                                                            _vm.state =
+                                                              $event.target.value
+                                                          }
+                                                        }
+                                                      }),
+                                                      _vm._v(" "),
+                                                      _c("span", {
+                                                        staticClass: "highlight"
+                                                      }),
+                                                      _c("span", {
+                                                        staticClass: "bar"
+                                                      }),
+                                                      _vm._v(" "),
+                                                      _c("label", [
+                                                        _vm._v("State")
+                                                      ])
+                                                    ]
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c("td", [
+                                                _c(
+                                                  "div",
+                                                  { staticClass: "group" },
+                                                  [
+                                                    _c("input", {
+                                                      directives: [
+                                                        {
+                                                          name: "model",
+                                                          rawName: "v-model",
+                                                          value: _vm.zip,
+                                                          expression: "zip"
+                                                        }
+                                                      ],
+                                                      staticStyle: {
+                                                        width: "50%"
+                                                      },
+                                                      attrs: {
+                                                        id: "zip",
+                                                        type: "text",
+                                                        required: ""
+                                                      },
+                                                      domProps: {
+                                                        value: _vm.zip
+                                                      },
+                                                      on: {
+                                                        input: function(
+                                                          $event
+                                                        ) {
+                                                          if (
+                                                            $event.target
+                                                              .composing
+                                                          ) {
+                                                            return
+                                                          }
+                                                          _vm.zip =
+                                                            $event.target.value
+                                                        }
+                                                      }
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c("span", {
+                                                      staticClass: "highlight"
+                                                    }),
+                                                    _c("span", {
+                                                      staticClass: "bar"
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c("label", [
+                                                      _vm._v("Zip Code")
+                                                    ])
+                                                  ]
+                                                )
+                                              ])
+                                            ])
+                                          ])
+                                        ])
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("tr", [
+                                        _c("td", [
+                                          _c("table", [
+                                            _c("tr", [
+                                              _c("td", [
+                                                _c(
+                                                  "div",
+                                                  { staticClass: "group" },
+                                                  [
+                                                    _c("input", {
+                                                      directives: [
+                                                        {
+                                                          name: "model",
+                                                          rawName: "v-model",
+                                                          value: _vm.phone,
+                                                          expression: "phone"
+                                                        }
+                                                      ],
+                                                      attrs: {
+                                                        id: "phone",
+                                                        type: "tel",
+                                                        required: ""
+                                                      },
+                                                      domProps: {
+                                                        value: _vm.phone
+                                                      },
+                                                      on: {
+                                                        input: function(
+                                                          $event
+                                                        ) {
+                                                          if (
+                                                            $event.target
+                                                              .composing
+                                                          ) {
+                                                            return
+                                                          }
+                                                          _vm.phone =
+                                                            $event.target.value
+                                                        }
+                                                      }
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c("span", {
+                                                      staticClass: "highlight"
+                                                    }),
+                                                    _c("span", {
+                                                      staticClass: "bar"
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c("label", [
+                                                      _vm._v("Phone Number")
+                                                    ])
+                                                  ]
+                                                )
+                                              ]),
+                                              _vm._v(" "),
+                                              _c("td", [
+                                                _c(
+                                                  "div",
+                                                  { staticClass: "group" },
+                                                  [
+                                                    _c("input", {
+                                                      directives: [
+                                                        {
+                                                          name: "model",
+                                                          rawName: "v-model",
+                                                          value: _vm.email,
+                                                          expression: "email"
+                                                        }
+                                                      ],
+                                                      attrs: {
+                                                        id: "email",
+                                                        type: "email",
+                                                        required: ""
+                                                      },
+                                                      domProps: {
+                                                        value: _vm.email
+                                                      },
+                                                      on: {
+                                                        input: function(
+                                                          $event
+                                                        ) {
+                                                          if (
+                                                            $event.target
+                                                              .composing
+                                                          ) {
+                                                            return
+                                                          }
+                                                          _vm.email =
+                                                            $event.target.value
+                                                        }
+                                                      }
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c("span", {
+                                                      staticClass: "highlight"
+                                                    }),
+                                                    _c("span", {
+                                                      staticClass: "bar"
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c("label", [
+                                                      _vm._v("Email (Optional)")
+                                                    ])
+                                                  ]
+                                                )
+                                              ])
+                                            ])
+                                          ])
+                                        ])
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("tr", [_c("td", [_vm._v(" ")])])
+                                    ]
+                                  )
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _c(
+                            "td",
+                            [
+                              _c(
+                                "b-btn",
+                                {
+                                  directives: [
+                                    {
+                                      name: "b-toggle",
+                                      rawName: "v-b-toggle.purchase-collapse",
+                                      modifiers: { "purchase-collapse": true }
+                                    }
+                                  ],
+                                  class: { "hvr-shrink": true },
+                                  attrs: { id: "purchase-btn-collapse" }
+                                },
+                                [_vm._v("Purchase Details")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "b-collapse",
+                                {
+                                  attrs: {
+                                    visible: "",
+                                    id: "purchase-collapse"
+                                  }
+                                },
+                                [
+                                  _c(
+                                    "table",
+                                    { staticClass: "purchase-detail-table" },
+                                    [
+                                      _c("tr", [_c("td", [_vm._v(" ")])]),
+                                      _vm._v(" "),
+                                      _vm._l(_vm.selectedSeats, function(seat) {
+                                        return _c("tr", [
+                                          _c("td", [
+                                            _vm._v(
+                                              "Seat: " + _vm._s(seat.label)
+                                            )
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("td", [
+                                            _vm._v(
+                                              "Section: " +
+                                                _vm._s(seat.section.label)
+                                            )
+                                          ]),
+                                          _vm._v(" "),
+                                          _c("td", [
+                                            _vm._v(
+                                              "Price: $" + _vm._s(seat.price)
+                                            )
+                                          ])
+                                        ])
+                                      }),
+                                      _vm._v(" "),
+                                      _c("tr", [_c("td", [_vm._v(" ")])]),
+                                      _vm._v(" "),
+                                      _c("tr", [
+                                        _c("td"),
+                                        _c("td"),
+                                        _c("td", [
+                                          _vm._v("Total: $" + _vm._s(_vm.total))
+                                        ])
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("tr", [
+                                        _c(
+                                          "td",
+                                          [
+                                            _c(
+                                              "b-button",
+                                              {
+                                                class: {
+                                                  "hvr-shrink": true,
+                                                  "button-hidden": _vm.success
+                                                },
+                                                attrs: { type: "button" },
+                                                on: {
+                                                  click: function($event) {
+                                                    _vm.submitPurchase()
+                                                  }
+                                                }
+                                              },
+                                              [_vm._v("Confirm Purchase")]
+                                            )
+                                          ],
+                                          1
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("tr", [_c("td", [_vm._v(" ")])])
+                                    ],
+                                    2
+                                  )
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        ])
+                      ],
+                      2
+                    )
+                  ])
+                ],
+                1
+              )
+        ]
       )
-    : _vm.success
-    ? _c("div", [
-        _c(
-          "svg",
-          {
-            attrs: {
-              version: "1.1",
-              xmlns: "http://www.w3.org/2000/svg",
-              viewBox: "0 0 130.2 130.2"
-            }
-          },
-          [
-            _c("circle", {
-              staticClass: "path circle",
-              attrs: {
-                fill: "none",
-                stroke: "#73AF55",
-                "stroke-width": "6",
-                "stroke-miterlimit": "10",
-                cx: "65.1",
-                cy: "65.1",
-                r: "62.1"
-              }
-            }),
-            _vm._v(" "),
-            _c("polyline", {
-              staticClass: "path check",
-              attrs: {
-                fill: "none",
-                stroke: "#73AF55",
-                "stroke-width": "6",
-                "stroke-linecap": "round",
-                "stroke-miterlimit": "10",
-                points: "100.2,40.2 51.5,88.8 29.8,67.5 "
-              }
-            })
-          ]
-        ),
-        _vm._v(" "),
-        _c("p", { staticClass: "success" }, [_vm._v("Purchase Confirmed!")])
-      ])
-    : _c("div", [
-        _c(
-          "svg",
-          {
-            attrs: {
-              version: "1.1",
-              xmlns: "http://www.w3.org/2000/svg",
-              viewBox: "0 0 130.2 130.2"
-            }
-          },
-          [
-            _c("circle", {
-              staticClass: "path circle",
-              attrs: {
-                fill: "none",
-                stroke: "#D06079",
-                "stroke-width": "6",
-                "stroke-miterlimit": "10",
-                cx: "65.1",
-                cy: "65.1",
-                r: "62.1"
-              }
-            }),
-            _vm._v(" "),
-            _c("line", {
-              staticClass: "path line",
-              attrs: {
-                fill: "none",
-                stroke: "#D06079",
-                "stroke-width": "6",
-                "stroke-linecap": "round",
-                "stroke-miterlimit": "10",
-                x1: "34.4",
-                y1: "37.9",
-                x2: "95.8",
-                y2: "92.3"
-              }
-            }),
-            _vm._v(" "),
-            _c("line", {
-              staticClass: "path line",
-              attrs: {
-                fill: "none",
-                stroke: "#D06079",
-                "stroke-width": "6",
-                "stroke-linecap": "round",
-                "stroke-miterlimit": "10",
-                x1: "95.8",
-                y1: "38",
-                x2: "34.4",
-                y2: "92.2"
-              }
-            })
-          ]
-        ),
-        _vm._v(" "),
-        _c("p", { staticClass: "error" }, [
-          _vm._v(
-            "Oops! Sorry about that, something went wrong with your purchase. Please go back to the seat map and select your seats again."
-          )
-        ])
-      ])
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true

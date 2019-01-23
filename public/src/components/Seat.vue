@@ -31,7 +31,7 @@
                 let seatAvailable = this.seats_arr[index].available;
                 let seatSelected = this.seats_arr[index].selected;
                 if(seatAvailable){
-                    if(seatSelected) this.color = '#8EE4AF'; // orange
+                    if(seatSelected) this.color = '#8EE4AF'; // light green
                     else return this. color = '#FFFFFF'; // white
                 } else return this.color = '#d3d3d3' ; //grey
             },

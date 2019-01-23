@@ -41,7 +41,6 @@ function submitSeats(selectedSeatsArr, res){
         let seatId = selectedSeatsArr[i]._id;
         Seat.updateOne({_id: seatId}, {$set: {available: false}}, function(error, result){
             if(error) console.log('Error Submitting Seat ' + seatId, error);
-            console.log('result', result);
         })
     }
     res.json({error: false});

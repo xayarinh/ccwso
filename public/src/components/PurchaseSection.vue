@@ -4,12 +4,12 @@
             <tr>
                 <td>
                     <table id="selected-seat-table">
-                            <tr style="height: 10%; width: 100%; border-bottom: 1px black solid;">
+                            <tr style="height: 10%; border-bottom: 1px black solid;">
                                 <th style="text-align: center;">Seat</th>
                                 <th style="text-align: center;">Section</th>
                                 <th style="text-align: center;">Price</th>
                             </tr>
-                            <tr style="height: 80%; width: 100%; border-bottom: 1px black solid;">
+                            <tr style="height: 80%; border-bottom: 1px black solid;">
                                 <td colspan="3">
                                     <table id="seat-table" style="height: 100%; width: 100%;">
                                         <tr v-for="(seat, index) in selectedSeats" v-bind:class="{'bottom-top': index > 0}">
@@ -20,7 +20,7 @@
                                     </table>
                                 </td>
                             </tr>
-                            <tr style="height: 10%; width: 100%;">
+                            <tr style="height: 10%;">
                                 <td style="text-align: center;">Total Seats: {{totalSeats}}</td>
                                 <td style="text-align: center;"></td>
                                 <td style="text-align: center;">Amount Due: ${{totalPrice}}</td>
@@ -108,6 +108,9 @@
     #selected-seat-table td{
         width: 33%;
         height: 6.66%;
+    }
+    #selected-seat-table tr{
+        width: 100%;
     }
 
     .bottom-top {

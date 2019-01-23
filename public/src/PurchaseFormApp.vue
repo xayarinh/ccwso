@@ -1,112 +1,77 @@
 <template>
-    <div style="padding-left: 20%; padding-right: 20%;" v-if="hasSeats">
-        <b-form id="purchase-form">
-        <table id="form-table">
-            <template v-if="errors.length > 0">
-                <p>Please fill out the mandatory fields before purchasing!</p>
-                <ul>
-                    <li v-for="error in errors">
-                        {{error}}
-                    </li>
-                </ul>
-            </template>
-            <tr>
-                <td>
-                    <b-btn v-b-toggle.contact-collapse id="contact-btn-collapse" v-bind:class="{'hvr-shrink': true}">Contact Information</b-btn>
-                    <b-collapse visible id="contact-collapse">
-                            <table id="contact-table">
+    <div v-if="hasSeats" style="padding-left: 20%; padding-right: 20%;">
+        <div v-if="success">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
+                <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
+            </svg>
+            <p class="success">Purchase Confirmed!</p>
+            <table class="form-table">
+                <tr>
+                    <td>
+                        <b-btn v-b-toggle.contact-collapse id="contact-btn-collapse" v-bind:class="{'hvr-shrink': true}">Contact Summary</b-btn>
+                        <b-collapse visible id="contact-collapse">
+                            <table class="contact-table">
                                 <tr><td>&nbsp;</td></tr>
                                 <tr>
                                     <td>
                                         <table>
-                                            <tr style="width: 100%;">
+                                            <tr>
+                                                <td style="width: 40%">
+                                                    <span><strong>First Name:</strong> {{firstname}}</span>
+                                                </td>
+                                                <td style="width: 10%;"></td>
                                                 <td style="width: 50%;">
-                                                    <div class="group">
-                                                        <input id="first-name" type="text" required  v-model="firstname"/>
-                                                        <span class="highlight"></span><span class="bar"></span>
-                                                        <label>First Name</label>
-                                                    </div>
+                                                    <span><strong>Last Name:</strong> {{lastname}}</span>
                                                 </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td style="width: 70%">
+                                                    <span><strong>Street Name:</strong> {{street}}</span>
+                                                </td>
+                                                <td style="width: 10%"></td>
+                                                <td style="width: 20%">
+                                                    <span><strong>Apt/Unit:</strong> {{street2}}</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td style="width: 20%">
+                                                    <span><strong>City:</strong> {{city}}</span>
+                                                </td>
+                                                <td style="width: 5%"></td>
+                                                <td style="width: 20%">
+                                                    <span><strong>State:</strong> {{state}}</span>
+                                                </td>
+                                                <td style="width: 5%"></td>
+                                                <td style="width: 20%">
+                                                    <span><strong>Zip Code:</strong> {{zip}}</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td style="width: 40%;">
+                                                    <span><strong>Phone Number:</strong> {{phone}}</span>
+                                                </td>
+                                                <td style="width: 10%;"></td>
                                                 <td style="width: 50%;">
-                                                    <div class="group">
-                                                        <input id="last-name" type="text" required v-model="lastname"/>
-                                                        <span class="highlight"></span><span class="bar"></span>
-                                                        <label>Last Name</label>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <table>
-                                            <tr>
-                                                <td>
-                                                    <div class="group">
-                                                        <input ref="autocomplete" type="text" required v-model="street" style="width: 80%;" placeholder=""/>
-                                                        <span class="highlight"></span><span class="bar"></span>
-                                                        <label>Street Address</label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="group">
-                                                        <input id="address-2" type="text" required v-model="street2" style="width: 30%;"/>
-                                                        <span class="highlight"></span><span class="bar"></span>
-                                                        <label>Apt/Unit (Optional)</label>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <table>
-                                            <tr>
-                                                <td>
-                                                    <div class="group">
-                                                        <input id="city" type="text" required v-model="city" style="width: 60%;"/>
-                                                        <span class="highlight"></span><span class="bar"></span>
-                                                        <label>City</label>
-                                                    </div>
-                                                </td>
-                                                <td style="width: 20%;">
-                                                    <div class="group" >
-                                                        <input id="state" type="text" required v-model="state" style="width: 25%;"/>
-                                                        <span class="highlight"></span><span class="bar"></span>
-                                                        <label>State</label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="group">
-                                                        <input id="zip" type="text" required v-model="zip" style="width: 50%;"/>
-                                                        <span class="highlight"></span><span class="bar"></span>
-                                                        <label>Zip Code</label>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <table>
-                                            <tr>
-                                                <td>
-                                                    <div class="group">
-                                                        <input id="phone" type="tel" required v-model="phone"/>
-                                                        <span class="highlight"></span><span class="bar"></span>
-                                                        <label>Phone Number</label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="group">
-                                                        <input id="email" type="email" required v-model="email"/>
-                                                        <span class="highlight"></span><span class="bar"></span>
-                                                        <label>Email (Optional)</label>
-                                                    </div>
+                                                    <span><strong>Email:</strong> {{email}}</span>
                                                 </td>
                                             </tr>
                                         </table>
@@ -114,47 +79,170 @@
                                 </tr>
                                 <tr><td>&nbsp;</td></tr>
                             </table>
-                    </b-collapse>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <b-btn v-b-toggle.purchase-collapse id="purchase-btn-collapse" v-bind:class="{'hvr-shrink': true}">Purchase Details</b-btn>
-                    <b-collapse visible id="purchase-collapse">
-                        <table>
-                            <tr><td>&nbsp;</td></tr>
-                            <tr v-for="seat in selectedSeats">
-                                <td>Seat: {{seat.label}}</td>
-                                <td>Price: ${{seat.price}}</td>
-                            </tr>
-                            <tr><td>&nbsp;</td></tr>
-                            <tr><td></td><td>Total: ${{total}}</td></tr>
-                            <tr>
-                                <td>
-                                    <b-button type="button" v-on:click="submitPurchase()" v-bind:class="{'hvr-shrink': true}">Confirm Purchase</b-button>
-                                </td>
-                            </tr>
-                        </table>
-                    </b-collapse>
-                </td>
-            </tr>
-        </table>
-        </b-form>
-    </div>
-    <div v-else-if="success">
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
-            <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
-            <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
-        </svg>
-        <p class="success">Purchase Confirmed!</p>
-    </div>
-    <div v-else>
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
-            <circle class="path circle" fill="none" stroke="#D06079" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
-            <line class="path line" fill="none" stroke="#D06079" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="34.4" y1="37.9" x2="95.8" y2="92.3"/>
-            <line class="path line" fill="none" stroke="#D06079" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="95.8" y1="38" x2="34.4" y2="92.2"/>
-        </svg>
-        <p class="error">Oops! Sorry about that, something went wrong with your purchase. Please go back to the seat map and select your seats again.</p>
+                        </b-collapse>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b-btn v-b-toggle.purchase-collapse id="purchase-btn-collapse" v-bind:class="{'hvr-shrink': true}">Purchase Summary</b-btn>
+                        <b-collapse visible id="purchase-collapse">
+                            <table class="purchase-detail-table">
+                                <tr><td>&nbsp;</td></tr>
+                                <tr v-for="seat in selectedSeats">
+                                    <td style="width: 20%; text-align: center;">Seat: {{seat.label}}</td>
+                                    <td style="width: 60%; text-align: center;">Section: {{seat.section.label}}</td>
+                                    <td style="width: 20%; text-align: center;">Price: ${{seat.price}}</td>
+                                </tr>
+                                <tr><td>&nbsp;</td></tr>
+                                <tr><td></td><td></td><td>Total: ${{total}}</td></tr>
+                            </table>
+                        </b-collapse>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div v-else>
+            <b-form class="purchase-form">
+                <table class="form-table">
+                    <template v-if="errors.length > 0">
+                        <p>Please fill out the mandatory fields before purchasing!</p>
+                        <ul>
+                            <li v-for="error in errors">
+                                {{error}}
+                            </li>
+                        </ul>
+                    </template>
+                    <tr>
+                        <td>
+                            <b-btn v-b-toggle.contact-collapse id="contact-btn-collapse" v-bind:class="{'hvr-shrink': true}">Contact Information</b-btn>
+                            <b-collapse visible id="contact-collapse">
+                                <table class="contact-table">
+                                    <tr><td>&nbsp;</td></tr>
+                                    <tr>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <div class="group">
+                                                            <input id="first-name" type="text" required style="width: 50%;" v-model="firstname"/>
+                                                            <span class="highlight"></span><span class="bar"></span>
+                                                            <label>First Name</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="group">
+                                                            <input id="last-name" type="text" required style="width: 50%;" v-model="lastname"/>
+                                                            <span class="highlight"></span><span class="bar"></span>
+                                                            <label>Last Name</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <div class="group">
+                                                            <input ref="autocomplete" type="text" required v-model="street" style="width: 80%;" placeholder=""/>
+                                                            <span class="highlight"></span><span class="bar"></span>
+                                                            <label>Street Address</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="group">
+                                                            <input id="address-2" type="text" required v-model="street2" style="width: 30%;"/>
+                                                            <span class="highlight"></span><span class="bar"></span>
+                                                            <label>Apt/Unit (Optional)</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <div class="group">
+                                                            <input id="city" type="text" required v-model="city" style="width: 60%;"/>
+                                                            <span class="highlight"></span><span class="bar"></span>
+                                                            <label>City</label>
+                                                        </div>
+                                                    </td>
+                                                    <td style="width: 20%;">
+                                                        <div class="group" >
+                                                            <input id="state" type="text" required v-model="state" style="width: 25%;"/>
+                                                            <span class="highlight"></span><span class="bar"></span>
+                                                            <label>State</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="group">
+                                                            <input id="zip" type="text" required v-model="zip" style="width: 50%;"/>
+                                                            <span class="highlight"></span><span class="bar"></span>
+                                                            <label>Zip Code</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <div class="group">
+                                                            <input id="phone" type="tel" required v-model="phone"/>
+                                                            <span class="highlight"></span><span class="bar"></span>
+                                                            <label>Phone Number</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="group">
+                                                            <input id="email" type="email" required v-model="email"/>
+                                                            <span class="highlight"></span><span class="bar"></span>
+                                                            <label>Email (Optional)</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr><td>&nbsp;</td></tr>
+                                </table>
+                            </b-collapse>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b-btn v-b-toggle.purchase-collapse id="purchase-btn-collapse" v-bind:class="{'hvr-shrink': true}">Purchase Details</b-btn>
+                            <b-collapse visible id="purchase-collapse">
+                                <table class="purchase-detail-table">
+                                    <tr><td>&nbsp;</td></tr>
+                                    <tr v-for="seat in selectedSeats">
+                                        <td>Seat: {{seat.label}}</td>
+                                        <td>Section: {{seat.section.label}}</td>
+                                        <td>Price: ${{seat.price}}</td>
+                                    </tr>
+                                    <tr><td>&nbsp;</td></tr>
+                                    <tr><td></td><td></td><td>Total: ${{total}}</td></tr>
+                                    <tr>
+                                        <td><b-button type="button" v-on:click="submitPurchase()" v-bind:class="{'hvr-shrink': true, 'button-hidden': success}">Confirm Purchase</b-button></td>
+                                    </tr>
+                                    <tr><td>&nbsp;</td></tr>
+                                </table>
+                            </b-collapse>
+                        </td>
+                    </tr>
+                </table>
+            </b-form>
+        </div>
     </div>
 </template>
 <script>
@@ -176,13 +264,14 @@
                 hasSeats: false,
                 success: false,
                 total: 0,
-                errors: []
+                errors: [],
+                inlineText: false
             }
         },
         created() {
             if(this.selectedSeats.length > 0){
                 for(let i = 0; i < this.selectedSeats.length; i++){
-                    var currPrice = this.selectedSeats[i].price;
+                     let currPrice = this.selectedSeats[i].price;
                     this.total += currPrice;
                 }
                 this.hasSeats = true;
@@ -191,8 +280,8 @@
         mounted() {
             try{
                 this.autocomplete = new google.maps.places.Autocomplete((this.$refs.autocomplete), {types: ['address']});
-                var autoCompleteRef = this.autocomplete;
-                var self = this;
+                let autoCompleteRef = this.autocomplete;
+                let self = this;
                 google.maps.event.addListener(this.autocomplete, 'place_changed', function(){
                     var place = autoCompleteRef.getPlace();
                     for(var i = 0; i < place.address_components.length; i++){
@@ -223,7 +312,6 @@
         },
         methods: {
             submitPurchase(){
-                console.log('fisrtname', this.firstname);
                 this.errors = [];
                 if(this.firstname === ''){
                     this.errors.push('First name is required.');
@@ -251,10 +339,10 @@
                     let params = {selectedSeats: this.selectedSeats};
                     let self = this;
                     axios.post(submitSeatUrl, params).then(function(res){
-                        console.log('result', res);
                         self.success = true;
-                        self.hasSeats = false;
+                        self.inlineText = true;
                         document.title = 'Purchase Confirmation Page';
+                        window.scrollTo(0,0);
                     }).catch(function(error){
                         console.log('Error submitting seats', error);
                         document.title = 'Error Confirming Purchase';
@@ -272,32 +360,43 @@
 
     @import '../hover.css';
 
-    #contact-btn-collapse {
-    }
 
-    #purchase-form {
+    .purchase-form {
         border: 1px solid black;
         border-radius: 50px;
         padding-left: 5%;
     }
 
-    #form-table {
+    .form-table {
         height: 100%;
         width: 100%;
     }
 
-    #form-table tr {
+    .form-table tr {
         width: 100%;
     }
 
-    #contact-table {
+    .contact-table {
         height: 100%;
         width: 100%;
+    }
+
+
+    .purchase-detail-table {
+        width: 50%;
     }
 
     .group {
         position: relative;
         margin: 40px 0;
+    }
+
+    .display-inline {
+        display: inline;
+    }
+
+    .button-hidden {
+        visibility: hidden;
     }
 
     textarea {
@@ -420,6 +519,5 @@
             stroke-dashoffset: 900;
         }
     }
-
 
 </style>

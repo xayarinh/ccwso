@@ -4,17 +4,16 @@
         <div style="height: 500px; width: 100%;">
             <table id="main-table">
                 <tr>
-                    <td style="width: 10%; height: 100%;"></td>
-                    <td style="width: 40%; height: 100%;"><seat-map></seat-map></td>
-                    <td style="width: 10%; height: 100%;"></td>
-                    <td style="width: 35%; height: 100%;"><purchase-section></purchase-section></td>
-                    <td style="width: 5%; height: 100%;"></td>
+                    <td style="width: 10%;"></td>
+                    <td style="width: 40%;"><seat-map></seat-map></td>
+                    <td style="width: 10%;"></td>
+                    <td style="width: 35%;"><purchase-section></purchase-section></td>
+                    <td style="width: 5%;"></td>
                 </tr>
             </table>
         </div>
         <div style="height: 100px; width: 100%;"></div>
     </div>
-
 </template>
 
 <script>
@@ -32,9 +31,7 @@
         height: 100%;
         width: 100%;
     }
-
-    html, body {
-        margin:0;
-        padding:0;
+    #main-table tr {
+        height: 100%;
     }
 </style>
